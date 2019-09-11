@@ -1,0 +1,72 @@
+body {
+    /* background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/90spattern.jpg'); */
+    overflow-x: hidden;
+    height: 4000px;
+}
+
+.first-word {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.word {
+    display: inline-block;
+}
+
+.text {
+    position: fixed;
+    width: 850px;
+    height: 90px;
+    top: 50%;
+    margin-top: -45px;
+    left: 50%;
+    margin-left: -400px;
+}
+
+span {
+    display: inline-block;
+    position: relative;
+    font: 'Arial Black', Arial;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.container {
+    height: 4000px;
+    overflow: hidden;
+}
+
+.boy {
+    display: block;
+    position: absolute;
+}
+
+.brian {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/brian.png);
+    width: 260px;
+    height: 352px;
+}
+
+.kevin {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/kevin.png);
+    width: 280px;
+    height: 282px;
+}
+
+.howied {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/howied.png);
+    width: 250px;
+    height: 330px;
+}
+
+.nick {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/nick.png);
+    width: 260px;
+    height: 306px;
+}
+
+.aj {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/aj.png);
+    width: 199px;
+    height: 254px;
+}
