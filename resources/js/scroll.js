@@ -1,13 +1,17 @@
+// Constants
+const blackoutOpacity = 0.8;
+
 function onLoad() {
     const bodyEl = document.body;
     const pages = document.getElementsByClassName('page');
     const numPages = pages.length;
+    const blackout = document.getElementsByClassName('blackout')[0];
 
-    // set body height
+    // init body height
     const bodyHeight = window.innerHeight * numPages;
     bodyEl.style.height = bodyHeight + 'px';
 
-    // set page z-indexes
+    // init page z-indexes
     let currentZIndex = numPages;
     for (let i = 0; i < pages.length; i++) {
         const page = pages[i];
@@ -15,6 +19,10 @@ function onLoad() {
         page.style.zIndex = currentZIndex;
         currentZIndex--;
     }
+
+    // init blackout opacity and z-index
+    blackout.style.opacity = blackoutOpacity;
+    blackout.style.zIndex = numPages;
 };
 
 let lastScrollY = 0; // value used for animation
@@ -37,8 +45,9 @@ function updateElements() {
     ticking = false;
 
     const currentScrollY = lastScrollY;
+    const windowHeight = window.innerHeight;
     const pages = document.getElementsByClassName('page');
-    const currentPageIndex = Math.floor(currentScrollY / window.innerHeight);
+    const currentPageIndex = Math.floor(currentScrollY / windowHeight);
 
     const currentPage = pages[currentPageIndex];
     const prevPage = pages[currentPageIndex - 1];
@@ -55,8 +64,13 @@ function updateElements() {
     // set current page style if not last page
     if (currentPageIndex < pages.length - 1) {
         currentPage.className = 'page current-page';
-        currentPage.style.transform = `translateY(${-(currentScrollY / window.innerHeight)}%)`;
+        currentPage.style.transform = `translateY(${-(currentScrollY / windowHeight)}%)`;
     }
+
+    // set blackout opacity and z-index
+    const blackout = document.getElementsByClassName('blackout')[0];
+    blackout.style.zIndex = currentPage.style.zIndex;
+    blackout.style.opacity = blackoutOpacity - (((currentScrollY % windowHeight) / windowHeight) * blackoutOpacity);
 
     console.log('currentScrollY: ', currentScrollY);
 
