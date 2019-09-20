@@ -1,4 +1,11 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
+h1 {
+    margin: 0;
+}
 
 .nav-container {
     display: inline-block;
@@ -32,10 +39,10 @@ li {
 }
 
 .main-container {
-    width: 100vw;
-    height: 2000px;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    padding-top: 500px;
+    box-sizing: border-box;
 }
 
 .work-container {
@@ -47,14 +54,85 @@ li {
     text-decoration: none;
 }
 
-.navicare-container {
-    font-size: 26px;
-}
-
 .contact-container {
     padding-top: 20px
 }
 
 .contact-container span {
     display: block;
+}
+
+.blackout {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+}
+
+.pages-container {
+    font-size: 26px;
+    height: 100%;
+    position: relative;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    border-width: 10px;
+    border-style: solid;
+    box-sizing: border-box;
+    left: 0;
+}
+
+.prev-page {
+    position: relative;
+    top: -100%;
+}
+
+.current-page {
+    position: relative;
+    top: 0;
+}
+
+.next-page {
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+}
+
+.content-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-content {
+    margin: auto;
+    text-align: center;
+}
+
+#page-1 {
+    border-color: #50db0f;
+    background-color: darkkhaki;
+}
+
+#page-2 {
+    border-color: #db570f;
+    background-color: aqua;
+}
+
+#page-3 {
+    border-color: #2fc29f;
+    background-color: coral;
+}
+
+#page-4 {
+    border-color: #d80a89;
+    background-color: rgb(158, 163, 158);
+}
+
+#page-5 {
+    border-color: #c48b21;
+    background-color: rgb(98, 103, 173);
 }
