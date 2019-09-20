@@ -73,9 +73,19 @@ function updateElements() {
     blackout.style.opacity = blackoutOpacity - (((currentScrollY % windowHeight) / windowHeight) * blackoutOpacity);
 
     console.log('currentScrollY: ', currentScrollY);
+}
 
+function onResize() {
+    const numPages = document.getElementsByClassName('page').length;
+    // reset body height
+    const bodyHeight = window.innerHeight * numPages;
+    const bodyEl = document.body;
+    bodyEl.style.height = bodyHeight + 'px';
+
+    console.log(`new body height: ${bodyHeight}px`);
 }
 
 window.addEventListener('load', onLoad);
 window.addEventListener('scroll', onScroll);
+window.addEventListener('resize', onResize);
 // TODO: add event listener for arrow key press to animate page transitions
