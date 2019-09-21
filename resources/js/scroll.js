@@ -10,17 +10,17 @@ const BLACKOUT_OPACITY = 0.8;
 let lastScrollY = 0; // value used for animation
 let ticking = false;
 
-function setDocumentBodyHeight() {
+const setDocumentBodyHeight = () => {
     const bodyHeight = WINDOW_HEIGHT * NUM_PAGES;
     BODY.style.height = bodyHeight + 'px';
 }
 
-function setBlackoutElement(zIndex, opacity) {
+const setBlackoutElement = (zIndex, opacity) => {
     BLACKOUT.style.zIndex = zIndex;
     BLACKOUT.style.opacity = opacity;
 }
 
-function onLoad() {
+const onLoad = () => {
     // init body height
     setDocumentBodyHeight();
 
@@ -37,23 +37,23 @@ function onLoad() {
     setBlackoutElement(BLACKOUT_OPACITY, NUM_PAGES);
 };
 
-function onScroll(e) {
+const onScroll = (e) => {
     lastScrollY = window.scrollY || window.pageYOffset;
     requestTick();
 }
 
-function requestTick() {
+const requestTick = () => {
     if (!ticking) {
         requestAnimationFrame(updateElements);
     }
     ticking = true;
 }
 
-function getCurrentPageIndex() {
+const getCurrentPageIndex = () => {
     return Math.floor(lastScrollY / WINDOW_HEIGHT);
 }
 
-function getCurrentPages() {
+const getCurrentPages = () => {
     const currentPageIndex = getCurrentPageIndex();
 
     return {
@@ -63,7 +63,7 @@ function getCurrentPages() {
     };
 }
 
-function updateElements() {
+const updateElements = () => {
     // reset ticking
     ticking = false;
 
@@ -100,14 +100,14 @@ function updateElements() {
     console.log('currentScrollY: ', currentScrollY);
 }
 
-function onResize() {
+const onResize = () => {
     // reset body height
     setDocumentBodyHeight();
 
     console.log(`new body height: ${bodyHeight}px`);
 }
 
-function snapToNext(e) {
+const snapToNext = (e) => {
     const currentScrollY = lastScrollY;
     const { currentPage } = getCurrentPages();
 
@@ -127,7 +127,7 @@ function snapToNext(e) {
     });
 }
 
-function onKeyDown(e) {
+const onKeyDown = (e) => {
     if (e.keyCode === 38 || e.keyCode === 40) {
         e.preventDefault();
         snapToNext(e);
