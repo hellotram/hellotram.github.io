@@ -13,6 +13,8 @@ let ticking = false;
 const setDocumentBodyHeight = () => {
     const bodyHeight = WINDOW_HEIGHT * NUM_PAGES;
     BODY.style.height = bodyHeight + 'px';
+
+    console.log(`new body height: ${bodyHeight}px`);
 }
 
 const setBlackoutElement = (zIndex, opacity) => {
@@ -53,47 +55,45 @@ const getCurrentPageIndex = () => {
     return Math.floor(lastScrollY / WINDOW_HEIGHT);
 }
 
-const getCurrentPages = () => {
-    const currentPageIndex = getCurrentPageIndex();
-
-    return {
-        currentPage: PAGES[currentPageIndex],
-        prevPage: PAGES[currentPageIndex - 1],
-        nextPage: PAGES[currentPageIndex + 1]
-    };
-}
-
 const updateElements = () => {
     // reset ticking
     ticking = false;
 
     const currentScrollY = lastScrollY;
     const currentPageIndex = getCurrentPageIndex();
-    const { currentPage, prevPage, nextPage } = getCurrentPages();
 
-    if (prevPage) {
-        prevPage.className = 'page prev-page';
-        prevPage.style.transform = 'none';
-    }
-    if (nextPage) {
-        nextPage.className = 'page next-page';
-        nextPage.style.transform = 'none';
-    }
+    for (let i = 0; i < PAGES.length; i++) {
+        const page = PAGES[i];
 
-    // set current page style if not last page
-    if (currentPageIndex < PAGES.length - 1) {
-        currentPage.className = 'page current-page';
+        if (page) {
+            if (i < currentPageIndex) {
+                // prev page
+                page.className = 'page prev-page';
+                page.style.transform = 'none';
+            } else if (i > currentPageIndex) {
+                // next page
+                page.className = 'page next-page';
+                page.style.transform = 'none';
+            } else {
+                // current page
+                page.className = 'page current-page';
 
-        if (currentScrollY % WINDOW_HEIGHT === 0) {
-            // don't transform when at edge of page
-            currentPage.style.transform = 'none';
-        } else {
-            currentPage.style.transform = `translateY(${-(currentScrollY / WINDOW_HEIGHT)}%)`;
+                if (currentPageIndex === PAGES.length - 1) {
+                    page.style.position = 'fixed';
+                }
+
+                if (currentScrollY % WINDOW_HEIGHT === 0) {
+                    // don't transform when at edge of page
+                    page.style.transform = 'none';
+                } else {
+                    page.style.transform = `translateY(${-(currentScrollY / WINDOW_HEIGHT)}%)`;
+                }
+            }
         }
     }
 
     // set blackout opacity and z-index
-    const currentPageZIndex = currentPage.style.zIndex;
+    const currentPageZIndex = NUM_PAGES - currentPageIndex;
     const currentBlackoutOpacity = BLACKOUT_OPACITY - (((currentScrollY % WINDOW_HEIGHT) / WINDOW_HEIGHT) * BLACKOUT_OPACITY);
     setBlackoutElement(currentPageZIndex, currentBlackoutOpacity);
 
@@ -103,13 +103,12 @@ const updateElements = () => {
 const onResize = () => {
     // reset body height
     setDocumentBodyHeight();
-
-    console.log(`new body height: ${bodyHeight}px`);
 }
 
 const snapToNext = (e) => {
     const currentScrollY = lastScrollY;
-    const { currentPage } = getCurrentPages();
+    const currentPageIndex = getCurrentPageIndex();
+    const currentPage = PAGES[currentPageIndex];
 
     let nextScrollY;
 
@@ -130,9 +129,26 @@ const snapToNext = (e) => {
 const onKeyDown = (e) => {
     if (e.keyCode === 38 || e.keyCode === 40) {
         e.preventDefault();
+
         snapToNext(e);
     }
 }
+
+// const debounce = (func, wait) => {
+//     let timeout;
+
+//     return function() {
+//         const self = this;
+//         const args = arguments;
+
+//         clearTimeout(timeout);
+
+//         timeout = setTimeout(() => {
+//             console.log('calling func')
+//             func.apply(self, args);
+//         }, wait);
+//     }
+// };
 
 window.addEventListener('load', onLoad);
 window.addEventListener('scroll', onScroll);

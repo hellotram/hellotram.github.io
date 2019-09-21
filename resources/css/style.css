@@ -82,6 +82,7 @@ li {
     border-style: solid;
     box-sizing: border-box;
     left: 0;
+    visibility: hidden;
 }
 
 .prev-page {
