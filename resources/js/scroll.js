@@ -1,32 +1,41 @@
 // Constants
-const blackoutOpacity = 0.8;
+const WINDOW_HEIGHT = window.innerHeight;
+const BODY = document.body;
+const PAGES = document.getElementsByClassName('page');
+const NUM_PAGES = PAGES.length;
+const BLACKOUT = document.getElementsByClassName('blackout')[0];
+const BLACKOUT_OPACITY = 0.8;
+
+// Variables
+let lastScrollY = 0; // value used for animation
+let ticking = false;
+
+function setDocumentBodyHeight() {
+    const bodyHeight = WINDOW_HEIGHT * NUM_PAGES;
+    BODY.style.height = bodyHeight + 'px';
+}
+
+function setBlackoutElement(zIndex, opacity) {
+    BLACKOUT.style.zIndex = zIndex;
+    BLACKOUT.style.opacity = opacity;
+}
 
 function onLoad() {
-    const bodyEl = document.body;
-    const pages = document.getElementsByClassName('page');
-    const numPages = pages.length;
-    const blackout = document.getElementsByClassName('blackout')[0];
-
     // init body height
-    const bodyHeight = window.innerHeight * numPages;
-    bodyEl.style.height = bodyHeight + 'px';
+    setDocumentBodyHeight();
 
     // init page z-indexes
-    let currentZIndex = numPages;
-    for (let i = 0; i < pages.length; i++) {
-        const page = pages[i];
+    let currentZIndex = NUM_PAGES;
+    for (let i = 0; i < PAGES.length; i++) {
+        const page = PAGES[i];
         page.style.visibility = 'visible';
         page.style.zIndex = currentZIndex;
         currentZIndex--;
     }
 
     // init blackout opacity and z-index
-    blackout.style.opacity = blackoutOpacity;
-    blackout.style.zIndex = numPages;
+    setBlackoutElement(BLACKOUT_OPACITY, NUM_PAGES);
 };
-
-let lastScrollY = 0; // value used for animation
-let ticking = false;
 
 function onScroll(e) {
     lastScrollY = window.scrollY || window.pageYOffset;
@@ -40,18 +49,27 @@ function requestTick() {
     ticking = true;
 }
 
+function getCurrentPageIndex() {
+    return Math.floor(lastScrollY / WINDOW_HEIGHT);
+}
+
+function getCurrentPages() {
+    const currentPageIndex = getCurrentPageIndex();
+
+    return {
+        currentPage: PAGES[currentPageIndex],
+        prevPage: PAGES[currentPageIndex - 1],
+        nextPage: PAGES[currentPageIndex + 1]
+    };
+}
+
 function updateElements() {
     // reset ticking
     ticking = false;
 
     const currentScrollY = lastScrollY;
-    const windowHeight = window.innerHeight;
-    const pages = document.getElementsByClassName('page');
-    const currentPageIndex = Math.floor(currentScrollY / windowHeight);
-
-    const currentPage = pages[currentPageIndex];
-    const prevPage = pages[currentPageIndex - 1];
-    const nextPage = pages[currentPageIndex + 1];
+    const currentPageIndex = getCurrentPageIndex();
+    const { currentPage, prevPage, nextPage } = getCurrentPages();
 
     if (prevPage) {
         prevPage.className = 'page prev-page';
@@ -59,33 +77,64 @@ function updateElements() {
     }
     if (nextPage) {
         nextPage.className = 'page next-page';
+        nextPage.style.transform = 'none';
     }
 
     // set current page style if not last page
-    if (currentPageIndex < pages.length - 1) {
+    if (currentPageIndex < PAGES.length - 1) {
         currentPage.className = 'page current-page';
-        currentPage.style.transform = `translateY(${-(currentScrollY / windowHeight)}%)`;
+
+        if (currentScrollY % WINDOW_HEIGHT === 0) {
+            // don't transform when at edge of page
+            currentPage.style.transform = 'none';
+        } else {
+            currentPage.style.transform = `translateY(${-(currentScrollY / WINDOW_HEIGHT)}%)`;
+        }
     }
 
     // set blackout opacity and z-index
-    const blackout = document.getElementsByClassName('blackout')[0];
-    blackout.style.zIndex = currentPage.style.zIndex;
-    blackout.style.opacity = blackoutOpacity - (((currentScrollY % windowHeight) / windowHeight) * blackoutOpacity);
+    const currentPageZIndex = currentPage.style.zIndex;
+    const currentBlackoutOpacity = BLACKOUT_OPACITY - (((currentScrollY % WINDOW_HEIGHT) / WINDOW_HEIGHT) * BLACKOUT_OPACITY);
+    setBlackoutElement(currentPageZIndex, currentBlackoutOpacity);
 
     console.log('currentScrollY: ', currentScrollY);
 }
 
 function onResize() {
-    const numPages = document.getElementsByClassName('page').length;
     // reset body height
-    const bodyHeight = window.innerHeight * numPages;
-    const bodyEl = document.body;
-    bodyEl.style.height = bodyHeight + 'px';
+    setDocumentBodyHeight();
 
     console.log(`new body height: ${bodyHeight}px`);
+}
+
+function snapToNext(e) {
+    const currentScrollY = lastScrollY;
+    const { currentPage } = getCurrentPages();
+
+    let nextScrollY;
+
+    if (e.keyCode === 38) {
+        // scroll up
+        nextScrollY = currentScrollY - (currentScrollY % WINDOW_HEIGHT || WINDOW_HEIGHT);
+    } else {
+        // scroll down
+        nextScrollY = currentScrollY + WINDOW_HEIGHT - (currentScrollY % WINDOW_HEIGHT);
+    }
+
+    window.scrollTo({
+        top: nextScrollY,
+        behavior: 'smooth'
+    });
+}
+
+function onKeyDown(e) {
+    if (e.keyCode === 38 || e.keyCode === 40) {
+        e.preventDefault();
+        snapToNext(e);
+    }
 }
 
 window.addEventListener('load', onLoad);
 window.addEventListener('scroll', onScroll);
 window.addEventListener('resize', onResize);
-// TODO: add event listener for arrow key press to animate page transitions
+window.addEventListener('keydown', onKeyDown);
