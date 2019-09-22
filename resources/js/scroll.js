@@ -37,7 +37,7 @@ const onLoad = () => {
     }
 
     // init blackout opacity and z-index
-    setBlackoutElement(BLACKOUT_OPACITY, NUM_PAGES);
+    setBlackoutElement(NUM_PAGES, BLACKOUT_OPACITY);
 };
 
 const onScroll = (e) => {
@@ -66,8 +66,11 @@ const updateElements = () => {
 
     const currentScrollY = lastScrollY;
     const currentPageIndex = getCurrentPageIndex();
-    const currentPageBuffer = currentPageIndex * PAGE_BUFFER;
     console.log('currentPageIndex:', currentPageIndex);
+    const currentPageBuffer = currentPageIndex * PAGE_BUFFER;
+
+    const currentPageZIndex = NUM_PAGES - currentPageIndex;
+    let currentBlackoutOpacity;
 
     for (let i = 0; i < PAGES.length; i++) {
         const page = PAGES[i];
@@ -77,11 +80,13 @@ const updateElements = () => {
                 // prev page
                 page.className = 'page prev-page';
                 page.style.transform = 'none';
+                page.style.top = 0;
             } else if (i > currentPageIndex) {
                 // next page
                 page.className = 'page next-page';
                 page.style.transform = 'none';
                 page.style.position = 'fixed';
+                page.style.top = 0;
             } else {
                 // current page
                 page.className = 'page current-page';
@@ -96,18 +101,18 @@ const updateElements = () => {
                     page.style.transform = 'none';
                     page.style.position = 'fixed';
                     page.style.top = 0;
+                    currentBlackoutOpacity = BLACKOUT_OPACITY;
                 } else {
                     page.style.position = 'relative';
                     page.style.top = `${currentPageBuffer}px`;
                     page.style.transform = `translateY(${-((currentScrollY % WINDOW_HEIGHT) / WINDOW_HEIGHT)}px)`;
+                    currentBlackoutOpacity = BLACKOUT_OPACITY - (((currentScrollY % (WINDOW_HEIGHT + PAGE_BUFFER)) / WINDOW_HEIGHT) * BLACKOUT_OPACITY);
                 }
             }
         }
     }
 
     // set blackout opacity and z-index
-    const currentPageZIndex = NUM_PAGES - currentPageIndex;
-    const currentBlackoutOpacity = BLACKOUT_OPACITY - (((currentScrollY % WINDOW_HEIGHT) / WINDOW_HEIGHT) * BLACKOUT_OPACITY);
     setBlackoutElement(currentPageZIndex, currentBlackoutOpacity);
 
     console.log('currentScrollY: ', currentScrollY);
