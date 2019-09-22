@@ -5,7 +5,7 @@ const PAGES = document.getElementsByClassName('page');
 const NUM_PAGES = PAGES.length;
 const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
-const PAGE_BUFFER = 40;
+const PAGE_BUFFER = 50;
 
 // Variables
 let lastScrollY = 0; // value used for animation
