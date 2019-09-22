@@ -113,27 +113,56 @@ li {
     text-align: center;
 }
 
+.parallax-container {
+    position: fixed;
+    z-index: 1000;
+    visibility: visible;
+}
+
+#parallax-1 {
+    position: fixed;
+    top: 50%;
+    left: 25%;
+}
+
+#parallax-2 {
+    position: fixed;
+    top: 50%;
+    left: 120%;
+    width: 200px;
+}
+
 #page-1 {
+    border: none;
+    background-color: #fff;
+}
+
+#page-2 {
+    border: none;
+    background-color: #fff;
+}
+
+#page-3 {
     border-color: #50db0f;
     background-color: darkkhaki;
 }
 
-#page-2 {
+#page-4 {
     border-color: #db570f;
     background-color: aqua;
 }
 
-#page-3 {
+#page-5 {
     border-color: #2fc29f;
     background-color: coral;
 }
 
-#page-4 {
+#page-6 {
     border-color: #d80a89;
     background-color: rgb(158, 163, 158);
 }
 
-#page-5 {
+#page-7 {
     border-color: #c48b21;
     background-color: rgb(98, 103, 173);
 }

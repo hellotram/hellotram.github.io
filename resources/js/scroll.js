@@ -6,6 +6,7 @@ const NUM_PAGES = PAGES.length;
 const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
 const PAGE_BUFFER = 50;
+const NUM_PARALLAX_PAGES = 2;
 
 // Variables
 let lastScrollY = 0; // value used for animation
@@ -19,6 +20,8 @@ const setDocumentBodyHeight = () => {
 }
 
 const setBlackoutElement = (zIndex, opacity) => {
+    // hide blackout on first pages
+    BLACKOUT.style.visibility = zIndex > (NUM_PAGES - (NUM_PARALLAX_PAGES - 1)) ? 'hidden' : 'visible';
     BLACKOUT.style.zIndex = zIndex;
     BLACKOUT.style.opacity = opacity;
 }
@@ -71,6 +74,21 @@ const updateElements = () => {
 
     const currentPageZIndex = NUM_PAGES - currentPageIndex;
     let currentBlackoutOpacity;
+
+    const parallax1 = document.getElementById('parallax-1');
+    parallax1.style.transform = `translateX(-${(currentScrollY / WINDOW_HEIGHT) * 1000}%)`;
+    const parallax2 = document.getElementById('parallax-2');
+
+    if (currentScrollY > WINDOW_HEIGHT + PAGE_BUFFER) {
+        // move up
+        const currentX = parallax2.getBoundingClientRect().left;
+        parallax2.style.left = `${currentX}px`;
+        parallax2.style.transform = `translateY(${-(currentScrollY % WINDOW_HEIGHT) + PAGE_BUFFER}px)`;
+    } else {
+        // move across
+        parallax2.style.transform = `translateX(-${(currentScrollY / WINDOW_HEIGHT) * 500}%)`;
+        parallax2.style.left = '120%';
+    }
 
     for (let i = 0; i < PAGES.length; i++) {
         const page = PAGES[i];
