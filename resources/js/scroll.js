@@ -132,10 +132,10 @@ const snapToNext = (e) => {
 
     if (e.keyCode === 38) {
         // scroll up
-        nextScrollY = currentScrollY - (currentScrollY % WINDOW_HEIGHT || WINDOW_HEIGHT);
+        nextScrollY = currentScrollY - (currentScrollY % (WINDOW_HEIGHT + PAGE_BUFFER) || (WINDOW_HEIGHT + PAGE_BUFFER));
     } else {
         // scroll down
-        nextScrollY = currentScrollY + WINDOW_HEIGHT - (currentScrollY % WINDOW_HEIGHT);
+        nextScrollY = currentScrollY + WINDOW_HEIGHT + PAGE_BUFFER - (currentScrollY % (WINDOW_HEIGHT + PAGE_BUFFER));
     }
 
     window.scrollTo({
