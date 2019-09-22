@@ -5,22 +5,25 @@ const PAGES = document.getElementsByClassName('page');
 const NUM_PAGES = PAGES.length;
 const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
+const PAGE_BUFFER = 40;
 
 // Variables
 let lastScrollY = 0; // value used for animation
 let ticking = false;
 
-function setDocumentBodyHeight() {
-    const bodyHeight = WINDOW_HEIGHT * NUM_PAGES;
+const setDocumentBodyHeight = () => {
+    const bodyHeight = WINDOW_HEIGHT * NUM_PAGES + (PAGE_BUFFER * (NUM_PAGES - 1));
     BODY.style.height = bodyHeight + 'px';
+
+    console.log(`new body height: ${bodyHeight}px`);
 }
 
-function setBlackoutElement(zIndex, opacity) {
+const setBlackoutElement = (zIndex, opacity) => {
     BLACKOUT.style.zIndex = zIndex;
     BLACKOUT.style.opacity = opacity;
 }
 
-function onLoad() {
+const onLoad = () => {
     // init body height
     setDocumentBodyHeight();
 
@@ -34,91 +37,105 @@ function onLoad() {
     }
 
     // init blackout opacity and z-index
-    setBlackoutElement(BLACKOUT_OPACITY, NUM_PAGES);
+    setBlackoutElement(NUM_PAGES, BLACKOUT_OPACITY);
 };
 
-function onScroll(e) {
+const onScroll = (e) => {
     lastScrollY = window.scrollY || window.pageYOffset;
     requestTick();
 }
 
-function requestTick() {
+const requestTick = () => {
     if (!ticking) {
         requestAnimationFrame(updateElements);
     }
     ticking = true;
 }
 
-function getCurrentPageIndex() {
-    return Math.floor(lastScrollY / WINDOW_HEIGHT);
+const getCurrentPageIndex = () => {
+    if (lastScrollY < WINDOW_HEIGHT) {
+        return 0;
+    }
+
+    return Math.floor((lastScrollY - WINDOW_HEIGHT) / (WINDOW_HEIGHT + PAGE_BUFFER)) + 1;
 }
 
-function getCurrentPages() {
-    const currentPageIndex = getCurrentPageIndex();
-
-    return {
-        currentPage: PAGES[currentPageIndex],
-        prevPage: PAGES[currentPageIndex - 1],
-        nextPage: PAGES[currentPageIndex + 1]
-    };
-}
-
-function updateElements() {
+const updateElements = () => {
     // reset ticking
     ticking = false;
 
     const currentScrollY = lastScrollY;
     const currentPageIndex = getCurrentPageIndex();
-    const { currentPage, prevPage, nextPage } = getCurrentPages();
+    console.log('currentPageIndex:', currentPageIndex);
+    const currentPageBuffer = currentPageIndex * PAGE_BUFFER;
 
-    if (prevPage) {
-        prevPage.className = 'page prev-page';
-        prevPage.style.transform = 'none';
-    }
-    if (nextPage) {
-        nextPage.className = 'page next-page';
-        nextPage.style.transform = 'none';
-    }
+    const currentPageZIndex = NUM_PAGES - currentPageIndex;
+    let currentBlackoutOpacity;
 
-    // set current page style if not last page
-    if (currentPageIndex < PAGES.length - 1) {
-        currentPage.className = 'page current-page';
+    for (let i = 0; i < PAGES.length; i++) {
+        const page = PAGES[i];
 
-        if (currentScrollY % WINDOW_HEIGHT === 0) {
-            // don't transform when at edge of page
-            currentPage.style.transform = 'none';
-        } else {
-            currentPage.style.transform = `translateY(${-(currentScrollY / WINDOW_HEIGHT)}%)`;
+        if (page) {
+            if (i < currentPageIndex) {
+                // prev page
+                page.className = 'page prev-page';
+                page.style.transform = 'none';
+                page.style.top = 0;
+            } else if (i > currentPageIndex) {
+                // next page
+                page.className = 'page next-page';
+                page.style.transform = 'none';
+                page.style.position = 'fixed';
+                page.style.top = 0;
+            } else {
+                // current page
+                page.className = 'page current-page';
+
+                // don't transform last page
+                if (currentPageIndex === PAGES.length - 1) {
+                    page.style.position = 'fixed';
+                }
+
+                if ((currentScrollY - WINDOW_HEIGHT) % (WINDOW_HEIGHT + PAGE_BUFFER) >= 0 && (currentScrollY - WINDOW_HEIGHT) % (WINDOW_HEIGHT + PAGE_BUFFER) < PAGE_BUFFER) {
+                    // don't transform when in between pages
+                    page.style.transform = 'none';
+                    page.style.position = 'fixed';
+                    page.style.top = 0;
+                    currentBlackoutOpacity = BLACKOUT_OPACITY;
+                } else {
+                    page.style.position = 'relative';
+                    page.style.top = `${currentPageBuffer}px`;
+                    page.style.transform = `translateY(${-((currentScrollY % WINDOW_HEIGHT) / WINDOW_HEIGHT)}px)`;
+                    currentBlackoutOpacity = BLACKOUT_OPACITY - (((currentScrollY % (WINDOW_HEIGHT + PAGE_BUFFER)) / WINDOW_HEIGHT) * BLACKOUT_OPACITY);
+                }
+            }
         }
     }
 
     // set blackout opacity and z-index
-    const currentPageZIndex = currentPage.style.zIndex;
-    const currentBlackoutOpacity = BLACKOUT_OPACITY - (((currentScrollY % WINDOW_HEIGHT) / WINDOW_HEIGHT) * BLACKOUT_OPACITY);
     setBlackoutElement(currentPageZIndex, currentBlackoutOpacity);
 
     console.log('currentScrollY: ', currentScrollY);
 }
 
-function onResize() {
+const onResize = () => {
     // reset body height
     setDocumentBodyHeight();
-
-    console.log(`new body height: ${bodyHeight}px`);
 }
 
-function snapToNext(e) {
+const snapToNext = (e) => {
     const currentScrollY = lastScrollY;
-    const { currentPage } = getCurrentPages();
+    const currentPageIndex = getCurrentPageIndex();
+    const currentPage = PAGES[currentPageIndex];
 
     let nextScrollY;
 
     if (e.keyCode === 38) {
         // scroll up
-        nextScrollY = currentScrollY - (currentScrollY % WINDOW_HEIGHT || WINDOW_HEIGHT);
+        nextScrollY = currentScrollY - (currentScrollY % (WINDOW_HEIGHT + PAGE_BUFFER) || (WINDOW_HEIGHT + PAGE_BUFFER));
     } else {
         // scroll down
-        nextScrollY = currentScrollY + WINDOW_HEIGHT - (currentScrollY % WINDOW_HEIGHT);
+        nextScrollY = currentScrollY + WINDOW_HEIGHT + PAGE_BUFFER - (currentScrollY % (WINDOW_HEIGHT + PAGE_BUFFER));
     }
 
     window.scrollTo({
@@ -127,9 +144,10 @@ function snapToNext(e) {
     });
 }
 
-function onKeyDown(e) {
+const onKeyDown = (e) => {
     if (e.keyCode === 38 || e.keyCode === 40) {
         e.preventDefault();
+
         snapToNext(e);
     }
 }
