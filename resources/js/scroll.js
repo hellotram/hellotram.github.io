@@ -5,13 +5,14 @@ const PAGES = document.getElementsByClassName('page');
 const NUM_PAGES = PAGES.length;
 const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
+const PAGE_BUFFER = 40;
 
 // Variables
 let lastScrollY = 0; // value used for animation
 let ticking = false;
 
 const setDocumentBodyHeight = () => {
-    const bodyHeight = WINDOW_HEIGHT * NUM_PAGES;
+    const bodyHeight = WINDOW_HEIGHT * NUM_PAGES + (PAGE_BUFFER * (NUM_PAGES - 1));
     BODY.style.height = bodyHeight + 'px';
 
     console.log(`new body height: ${bodyHeight}px`);
@@ -52,7 +53,11 @@ const requestTick = () => {
 }
 
 const getCurrentPageIndex = () => {
-    return Math.floor(lastScrollY / WINDOW_HEIGHT);
+    if (lastScrollY < WINDOW_HEIGHT) {
+        return 0;
+    }
+
+    return Math.floor((lastScrollY - WINDOW_HEIGHT) / (WINDOW_HEIGHT + PAGE_BUFFER)) + 1;
 }
 
 const updateElements = () => {
@@ -61,6 +66,8 @@ const updateElements = () => {
 
     const currentScrollY = lastScrollY;
     const currentPageIndex = getCurrentPageIndex();
+    const currentPageBuffer = currentPageIndex * PAGE_BUFFER;
+    console.log('currentPageIndex:', currentPageIndex);
 
     for (let i = 0; i < PAGES.length; i++) {
         const page = PAGES[i];
@@ -74,19 +81,25 @@ const updateElements = () => {
                 // next page
                 page.className = 'page next-page';
                 page.style.transform = 'none';
+                page.style.position = 'fixed';
             } else {
                 // current page
                 page.className = 'page current-page';
 
+                // don't transform last page
                 if (currentPageIndex === PAGES.length - 1) {
                     page.style.position = 'fixed';
                 }
 
-                if (currentScrollY % WINDOW_HEIGHT === 0) {
-                    // don't transform when at edge of page
+                if ((currentScrollY - WINDOW_HEIGHT) % (WINDOW_HEIGHT + PAGE_BUFFER) >= 0 && (currentScrollY - WINDOW_HEIGHT) % (WINDOW_HEIGHT + PAGE_BUFFER) < PAGE_BUFFER) {
+                    // don't transform when in between pages
                     page.style.transform = 'none';
+                    page.style.position = 'fixed';
+                    page.style.top = 0;
                 } else {
-                    page.style.transform = `translateY(${-(currentScrollY / WINDOW_HEIGHT)}%)`;
+                    page.style.position = 'relative';
+                    page.style.top = `${currentPageBuffer}px`;
+                    page.style.transform = `translateY(${-((currentScrollY % WINDOW_HEIGHT) / WINDOW_HEIGHT)}px)`;
                 }
             }
         }
@@ -133,22 +146,6 @@ const onKeyDown = (e) => {
         snapToNext(e);
     }
 }
-
-// const debounce = (func, wait) => {
-//     let timeout;
-
-//     return function() {
-//         const self = this;
-//         const args = arguments;
-
-//         clearTimeout(timeout);
-
-//         timeout = setTimeout(() => {
-//             console.log('calling func')
-//             func.apply(self, args);
-//         }, wait);
-//     }
-// };
 
 window.addEventListener('load', onLoad);
 window.addEventListener('scroll', onScroll);
