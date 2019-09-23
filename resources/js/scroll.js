@@ -78,16 +78,20 @@ const updateElements = () => {
     const parallax1 = document.getElementById('parallax-1');
     parallax1.style.transform = `translateX(-${(currentScrollY / WINDOW_HEIGHT) * 1000}%)`;
     const parallax2 = document.getElementById('parallax-2');
+    const currentLeft2 = parallax2.getBoundingClientRect().left;
 
-    if (currentScrollY > WINDOW_HEIGHT + PAGE_BUFFER) {
-        // move up
-        const currentX = parallax2.getBoundingClientRect().left;
-        parallax2.style.left = `${currentX}px`;
-        parallax2.style.transform = `translateY(${-(currentScrollY % WINDOW_HEIGHT) + PAGE_BUFFER}px)`;
-    } else {
+    if (currentScrollY < WINDOW_HEIGHT) {
         // move across
         parallax2.style.transform = `translateX(-${(currentScrollY / WINDOW_HEIGHT) * 500}%)`;
         parallax2.style.left = '120%';
+    } else if (currentScrollY >= WINDOW_HEIGHT && currentScrollY <= WINDOW_HEIGHT + PAGE_BUFFER) {
+        // stay in place
+        parallax2.style.left = `${currentLeft2}px`;
+        parallax2.style.transform = 'none';
+    } else {
+        // move up
+        parallax2.style.left = `${currentLeft2}px`;
+        parallax2.style.transform = `translateY(${-(currentScrollY - (WINDOW_HEIGHT + PAGE_BUFFER))}px)`;
     }
 
     for (let i = 0; i < PAGES.length; i++) {
