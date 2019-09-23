@@ -5,7 +5,7 @@ const PAGES = document.getElementsByClassName('page');
 const NUM_PAGES = PAGES.length;
 const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
-const PAGE_BUFFER = 50;
+const PAGE_BUFFER = 200;
 const NUM_PARALLAX_PAGES = 2;
 
 // Variables
@@ -148,6 +148,7 @@ const updateElements = () => {
 const onResize = () => {
     // reset body height
     setDocumentBodyHeight();
+    location.reload();
 }
 
 const snapToNext = (e) => {
