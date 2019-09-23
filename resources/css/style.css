@@ -11,7 +11,7 @@ h1 {
     display: inline-block;
     padding: 10px;
     position: fixed;
-    z-index: 200;
+    z-index: 1000;
 }
 
 .nav-container img {
@@ -115,31 +115,43 @@ li {
 
 .parallax-container {
     position: fixed;
-    z-index: 1000;
+    z-index: 100;
     visibility: visible;
 }
 
 #parallax-1 {
     position: fixed;
-    top: 50%;
-    left: 25%;
+    top: calc(50% - (266px / 2));
+    left: 315px;
+    z-index: 101;
+}
+
+#parallax-1 img {
+    width: 500px;
 }
 
 #parallax-2 {
     position: fixed;
-    top: 50%;
-    left: 120%;
-    width: 200px;
+    top: -10vh;
+    left: 800px;
+}
+
+#parallax-2 img {
+    height: 120vh;
+}
+
+.clip-svg {
+    clip-path: inset(0 0 8.5% 0);
 }
 
 #page-1 {
     border: none;
-    background-color: #fff;
+    background-color: #fddfe1;
 }
 
 #page-2 {
     border: none;
-    background-color: #fff;
+    background-color: #fddfe1;
 }
 
 #page-3 {
