@@ -6,6 +6,7 @@ const NUM_PAGES = PAGES.length;
 const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
 const PAGE_BUFFER = 50;
+const NUM_PARALLAX_PAGES = 2;
 
 // Variables
 let lastScrollY = 0; // value used for animation
@@ -18,7 +19,11 @@ const setDocumentBodyHeight = () => {
     console.log(`new body height: ${bodyHeight}px`);
 }
 
-const setBlackoutElement = (zIndex, opacity) => {
+const setBlackoutElement = (zIndex, opacity, currentScrollY) => {
+    currentScrollY = currentScrollY || window.pageYOffset;
+
+    // hide blackout on first pages
+    BLACKOUT.style.visibility = currentScrollY < (WINDOW_HEIGHT + PAGE_BUFFER) ? 'hidden' : 'visible';
     BLACKOUT.style.zIndex = zIndex;
     BLACKOUT.style.opacity = opacity;
 }
@@ -68,10 +73,32 @@ const updateElements = () => {
     const currentPageIndex = getCurrentPageIndex();
     console.log('currentPageIndex:', currentPageIndex);
     const currentPageBuffer = currentPageIndex * PAGE_BUFFER;
-
     const currentPageZIndex = NUM_PAGES - currentPageIndex;
     let currentBlackoutOpacity;
 
+    /* PARALLAX ITEMS */
+    // name logo
+    const parallax1 = document.getElementById('parallax-1');
+    parallax1.style.transform = `translateX(-${(currentScrollY / WINDOW_HEIGHT) * 175}%)`;
+    const parallax2 = document.getElementById('parallax-2');
+    const currentLeft2 = parallax2.getBoundingClientRect().left;
+
+    // mockup image
+    if (currentScrollY < WINDOW_HEIGHT) {
+        // move across
+        parallax2.style.transform = `translateX(-${(currentScrollY / WINDOW_HEIGHT) * 45}%)`;
+        parallax2.style.left = '800px';
+    } else if (currentScrollY >= WINDOW_HEIGHT && currentScrollY <= WINDOW_HEIGHT + PAGE_BUFFER) {
+        // stay in place
+        parallax2.style.left = `${currentLeft2}px`;
+        parallax2.style.transform = 'none';
+    } else {
+        // move up
+        parallax2.style.left = `${currentLeft2}px`;
+        parallax2.style.transform = `translateY(${-(currentScrollY - (WINDOW_HEIGHT + PAGE_BUFFER))}px)`;
+    }
+
+    /* PAGE ITEMS */
     for (let i = 0; i < PAGES.length; i++) {
         const page = PAGES[i];
 
@@ -113,7 +140,7 @@ const updateElements = () => {
     }
 
     // set blackout opacity and z-index
-    setBlackoutElement(currentPageZIndex, currentBlackoutOpacity);
+    setBlackoutElement(currentPageZIndex, currentBlackoutOpacity, currentScrollY);
 
     console.log('currentScrollY: ', currentScrollY);
 }

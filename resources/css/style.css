@@ -11,7 +11,7 @@ h1 {
     display: inline-block;
     padding: 10px;
     position: fixed;
-    z-index: 200;
+    z-index: 1000;
 }
 
 .nav-container img {
@@ -113,27 +113,68 @@ li {
     text-align: center;
 }
 
+.parallax-container {
+    position: fixed;
+    z-index: 100;
+    visibility: visible;
+}
+
+#parallax-1 {
+    position: fixed;
+    top: calc(50% - (266px / 2));
+    left: 315px;
+    z-index: 101;
+}
+
+#parallax-1 img {
+    width: 500px;
+}
+
+#parallax-2 {
+    position: fixed;
+    top: -10vh;
+    left: 800px;
+}
+
+#parallax-2 img {
+    height: 120vh;
+}
+
+.clip-svg {
+    clip-path: inset(0 0 8.5% 0);
+}
+
 #page-1 {
+    border: none;
+    background-color: #fddfe1;
+}
+
+#page-2 {
+    border: none;
+    background-color: #fddfe1;
+}
+
+#page-3 {
     border-color: #50db0f;
     background-color: darkkhaki;
 }
 
-#page-2 {
+#page-4 {
     border-color: #db570f;
     background-color: aqua;
 }
 
-#page-3 {
+#page-5 {
     border-color: #2fc29f;
     background-color: coral;
 }
 
-#page-4 {
+#page-6 {
     border-color: #d80a89;
     background-color: rgb(158, 163, 158);
 }
 
-#page-5 {
+#page-7 {
     border-color: #c48b21;
     background-color: rgb(98, 103, 173);
 }
