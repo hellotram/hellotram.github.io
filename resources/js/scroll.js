@@ -148,7 +148,7 @@ const updateElements = () => {
 const onResize = () => {
     // reset body height
     setDocumentBodyHeight();
-    location.reload();
+    // location.reload();
 }
 
 const snapToNext = (e) => {
