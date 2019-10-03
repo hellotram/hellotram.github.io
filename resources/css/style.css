@@ -9,9 +9,11 @@ h1 {
 
 .nav-container {
     display: inline-block;
-    padding: 10px;
+    padding: 20px 10px 10px 20px;
     position: fixed;
     z-index: 1000;
+    font-family: 'Quicksand';
+    font-weight: 500;
 }
 
 .nav-container img {
@@ -41,7 +43,6 @@ li {
 .main-container {
     width: 100%;
     height: 100%;
-    text-align: center;
     box-sizing: border-box;
 }
 
@@ -55,7 +56,7 @@ li {
 }
 
 .contact-container {
-    padding-top: 20px
+    padding-top: 20px;
 }
 
 .contact-container span {
@@ -103,14 +104,8 @@ li {
 
 .content-container {
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.inner-content {
-    margin: auto;
-    text-align: center;
+    padding: 80px;
+    box-sizing: border-box;
 }
 
 .parallax-container {
@@ -162,4 +157,108 @@ li {
 #page-4, #page-6 {
     border-color: #fddfe1;
     background-color: #fff;
+}
+
+.inner-content {
+    height: 100%;
+}
+
+.inner-content h1, h2 {
+    font-family: 'Raleway';
+    font-size: 60px;
+    margin: 0;
+}
+
+.content-desc {
+    display: inline-block;
+    width: 45%;
+    min-width: 440px;
+    font-family: 'Quicksand';
+    font-size: 25px;
+    color: #404040;
+}
+
+.content-desc p {
+    line-height: 30px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+.content-desc strong {
+    font-weight: bold;
+}
+
+.emphasis {
+    width: 100%;
+    font-family: 'Quicksand';
+    font-size: 25px;
+    font-weight: 600;
+    color: #0094B5;
+    position: absolute;
+    right: 80px;
+    bottom: 50px;
+}
+
+#page-3 .content-desc {
+    margin-top: 20px;
+}
+
+#page-3 .inner-content {
+    text-align: right;
+}
+
+#page-3 h2 {
+    display: inline-block;
+    width: 75%;
+    min-width: 505px;
+    color: #FA8383;
+}
+
+#page-4 h1 {
+    color: #16C3E9;
+    position: relative;
+    top: 100px;
+    left: 200px;
+}
+
+#page-4 .content-desc {
+    width: 65%;
+    position: relative;
+    top: 120px;
+    left: calc(30% - 35px);
+    text-align: left;
+    min-width: 515px;
+}
+
+#page-4 .graphics {
+    width: 70%;
+    position: absolute;
+    left: 30%;
+    bottom: 100px;
+    font-family: 'Raleway';
+}
+
+#page-4 .graphic-cell {
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #0094B5;
+    padding-bottom: 30px;
+}
+
+#page-4 .last {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #0094B5;
+}
+
+#page-4 .text-top {
+    color: #FA8383;
+    font-size: 100px;
+}
+
+#page-4 .text-bottom {
+    font-size: 20px;
 }
