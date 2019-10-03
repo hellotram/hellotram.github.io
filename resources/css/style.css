@@ -12,8 +12,8 @@ h1 {
     padding: 20px 10px 10px 20px;
     position: fixed;
     z-index: 1000;
-    font-family: 'Quicksand';
-    font-weight: 500;
+    font-family: 'Raleway';
+    font-weight: 700;
 }
 
 .nav-container img {
@@ -24,12 +24,20 @@ h1 {
 .nav-container a {
     display: block;
     text-decoration: none;
-    color: #db570f;
+    color: #e7ada5;
     padding-top: 5px;
 }
 
+.nav-container .nav-link {
+    padding-left: 10px;
+}
+
 .nav-container a:hover {
-    color: #2fc29f;
+    color: #8ebdbc;
+}
+
+.nav-container .selected {
+    color: #8ebdbc;
 }
 
 ul {
@@ -103,6 +111,7 @@ li {
 }
 
 .content-container {
+    position: relative;
     height: 100%;
     padding: 80px;
     box-sizing: border-box;
@@ -261,4 +270,19 @@ li {
 
 #page-4 .text-bottom {
     font-size: 20px;
+}
+
+#page-4 .background-1 {
+    width: 800px;
+    position: absolute;
+    top: -170px;
+    right: -30px;
+    opacity: 0.08;
+}
+
+#page-4 .background-2 {
+    width: 350px;
+    position: absolute;
+    top: 500px;
+    left: -20px;
 }
