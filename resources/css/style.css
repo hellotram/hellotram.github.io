@@ -134,6 +134,19 @@ li {
     width: 500px;
 }
 
+#parallax-1 a {
+    position: absolute;
+    left: 45px;
+    bottom: 40px;
+    font-family: 'Quicksand';
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#parallax-1 a:hover {
+    color: #588181;
+}
+
 #parallax-2 {
     position: fixed;
     top: -10vh;
@@ -180,8 +193,6 @@ li {
 
 .content-desc {
     display: inline-block;
-    width: 45%;
-    min-width: 440px;
     font-family: 'Quicksand';
     font-size: 25px;
     color: #404040;
@@ -208,6 +219,36 @@ li {
     bottom: 50px;
 }
 
+@media (min-width: 1255px) {
+    #page-3 h2 {
+        width: 75%;
+    }
+
+    #page-3 .content-desc {
+        width: 65%;
+    }
+}
+
+@media (min-width: 1085px) and (max-width: 1254px) {
+    #page-3 h2 {
+        width: 90%;
+    }
+
+    #page-3 .content-desc {
+        width: 85%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1084px) {
+    #page-3 h2 {
+        width: 100%;
+    }
+
+    #page-3 .content-desc {
+        width: 100%;
+    }
+}
+
 #page-3 .content-desc {
     margin-top: 20px;
 }
@@ -218,22 +259,20 @@ li {
 
 #page-3 h2 {
     display: inline-block;
-    width: 75%;
-    min-width: 505px;
     color: #FA8383;
 }
 
 #page-4 h1 {
     color: #16C3E9;
     position: relative;
-    top: 100px;
-    left: 200px;
+    /* top: 10vh; */
+    left: 10%;
 }
 
 #page-4 .content-desc {
     width: 65%;
     position: relative;
-    top: 120px;
+    /* top: 120px; */
     left: calc(30% - 35px);
     text-align: left;
     min-width: 515px;
@@ -243,7 +282,7 @@ li {
     width: 70%;
     position: absolute;
     left: 30%;
-    bottom: 100px;
+    /* bottom: 100px; */
     font-family: 'Raleway';
 }
 
