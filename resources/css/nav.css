@@ -10,6 +10,8 @@ li {
     display: inline-block;
     padding: 20px 10px 10px 20px;
     position: fixed;
+    left: 0;
+    top: 0;
     z-index: 1000;
     font-family: 'Raleway';
     font-weight: 700;
