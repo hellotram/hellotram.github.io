@@ -24,7 +24,7 @@ h1 {
 .nav-container a {
     display: block;
     text-decoration: none;
-    color: #e7ada5;
+    color: #e87e6f;
     padding-top: 5px;
 }
 
@@ -33,11 +33,11 @@ h1 {
 }
 
 .nav-container a:hover {
-    color: #8ebdbc;
+    color: #7fa8a9;
 }
 
 .nav-container .selected {
-    color: #8ebdbc;
+    color: #7fa8a9;
 }
 
 ul {
@@ -578,4 +578,53 @@ li {
 #page-7 .circle-large p {
     margin-block-start: 0;
     margin-block-end: 0;
+}
+
+/* PAGE 8 */
+#page-8 .inner-content {
+    padding-left: 10%;
+}
+
+#page-8 h3 {
+    color: #16C3E9;
+    font-family: 'Raleway';
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#page-8 .accent {
+    color: #FA8383;
+}
+
+#page-8 .notes {
+    font-family: 'Quicksand';
+    font-size: 16px;
+    color: #404040;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+#page-8 .mock-container {
+    width: 100%;
+}
+
+#page-8 .mock-container div {
+    width: 32%;
+    display: inline-block;
+}
+
+#page-8 .mock-container img {
+    width: 200px;
+    display: inline-block;
+}
+
+#page-8 .title {
+    display: block !important;
+    width: 100% !important;
+    text-align: left;
+    font-family: 'Raleway';
+    font-size: 12px;
+    color: #16C3E9;
+    margin-bottom: 2px;
 }
