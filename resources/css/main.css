@@ -86,6 +86,7 @@ a {
 }
 
 .navicare-text h2 {
+    display: inline-block;
     font-family: 'Raleway';
     font-size: 40px;
     color: #04807D;
@@ -132,6 +133,7 @@ a {
 }
 
 .zsfg-header {
+    display: inline-block;
     font-family: 'Raleway';
     font-size: 40px;
     color: #04807D;
