@@ -7,47 +7,6 @@ h1 {
     margin: 0;
 }
 
-.nav-container {
-    display: inline-block;
-    padding: 20px 10px 10px 20px;
-    position: fixed;
-    z-index: 1000;
-    font-family: 'Raleway';
-    font-weight: 700;
-}
-
-.nav-container img {
-    width: 75px;
-    height: 75px;
-}
-
-.nav-container a {
-    display: block;
-    text-decoration: none;
-    color: #e87e6f;
-    padding-top: 5px;
-}
-
-.nav-container .nav-link {
-    padding-left: 10px;
-}
-
-.nav-container a:hover {
-    color: #7fa8a9;
-}
-
-.nav-container .selected {
-    color: #7fa8a9;
-}
-
-ul {
-    text-decoration: none;
-}
-
-li {
-    list-style-type: none;
-}
-
 .main-container {
     width: 100%;
     height: 100%;

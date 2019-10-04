@@ -1,0 +1,153 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    font-weight: 500;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 928px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 30px;
+    border-color: #FDDFE1;
+}
+
+.logo-container {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.greeting {
+    font-size: 25px;
+    font-family: 'Raleway';
+    color: #807D79;
+    text-align: center;
+}
+
+#flower-right {
+    position: absolute;
+    right: 0;
+    bottom: -175px;
+}
+
+#flower-left {
+    position: absolute;
+    left: 0;
+    bottom: -270px;
+}
+
+.arrow-container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 25px;
+}
+
+.navicare-container {
+    width: 100%;
+    height: 825px;
+    padding-top: 125px;
+}
+
+.navicare-bg {
+    position: relative;
+    width: 80%;
+    height: 586px;
+    background-color: #CEE7E7;
+    margin: 50px auto;
+    padding: 260px 0 0 80px;
+    box-sizing: border-box;
+}
+
+.navicare-bg img {
+    position: absolute;
+    right: 25px;
+    bottom: -50px;
+}
+
+.navicare-text h2 {
+    font-family: 'Raleway';
+    font-size: 40px;
+    color: #04807D;
+    margin: 0 0 10px 0;
+}
+
+.navicare-text h2:hover {
+    color: #e87e6f;
+}
+
+.navicare-text p {
+    font-family: 'Raleway';
+    font-size: 20px;
+    color: #807D79;
+}
+
+/* ZSFG */
+
+.zsfg-container {
+    position: relative;
+    width: 100%;
+    height: 825px;
+}
+
+.zsfg-bg {
+    width: 80%;
+    height: 586px;
+    background-color: #FDDFE1;
+    margin: 50px auto;
+    padding: 155px 0 0 80px;
+    box-sizing: border-box;
+}
+
+.zsfg-bg img {
+    position: absolute;
+    right: -30px;
+    bottom: 140px;
+}
+
+.zsfg-text p {
+    font-family: 'Raleway';
+    font-size: 20px;
+    color: #807D79;
+}
+
+.zsfg-header {
+    font-family: 'Raleway';
+    font-size: 40px;
+    color: #04807D;
+}
+
+.zsfg-header:hover {
+    color: #e87e6f !important;
+}
+
+.zsfg-header p {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    margin: 0;
+}
+
+.zsfg-header {
+    width: 530px;
+}
