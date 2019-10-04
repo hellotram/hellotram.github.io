@@ -419,6 +419,7 @@ li {
 }
 
 #page-6 .quote {
+    position: relative;
     display: inline-block;
     font-family: 'Raleway';
     font-size: 40px;
@@ -434,7 +435,10 @@ li {
 }
 
 #page-6 .quote img {
-    float: left;
+    position: absolute;
+    width: 200px;
+    left: 210px;
+    top: -65px;
 }
 
 #page-6 .nav-bar {
@@ -455,6 +459,123 @@ li {
 }
 
 #page-6 .notes p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+/* PAGE 7 */
+#page-7 .inner-content {
+    z-index: 2;
+    padding-left: 10%;
+}
+
+#page-7 .background {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#page-7 .text-container {
+    width: 65%;
+    display: inline-block;
+    margin-right: 6%;
+}
+
+#page-7 .header-text {
+    margin-bottom: 20px;
+}
+
+#page-7 .header-text p {
+    font-family: 'Raleway';
+    font-size: 40px;
+    font-weight: 600;
+    color: #16C3E9;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-bottom: 10px;
+}
+
+#page-7 .accent {
+    color: #FA8383 !important;
+}
+
+#page-7 .notes {
+    font-family: 'Quicksand';
+    font-size: 16px;
+    color: #404040;
+}
+
+#page-7 .notes p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#page-7 .graphics-small {
+    width: 28%;
+    display: inline-block;
+}
+
+#page-7 .graphics-circles div {
+    display: inline-block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Raleway';
+    font-size: 14px;
+    padding-top: 40px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#light-blue {
+    display: block !important;
+    background-color: #C8F0F9;
+    color: #404040;
+}
+
+#blue {
+    background-color: #0094B5;
+    color: white;
+    margin-right: 20px;
+}
+
+#pink-2 {
+    background-color: #FFBDBD;
+    color: #404040;
+}
+
+#red-2 {
+    display: block !important;
+    background-color: #F30617;
+    color: white;
+    margin-left: 126px;
+}
+
+#page-7 .graphics-large {
+    width: 100%;
+}
+
+#page-7 .graphics-large div {
+    display: inline-block;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-right: calc((100% - 800px) / 3);
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Raleway';
+    font-size: 24px;
+    color: #0094B5;
+    background-color: white;
+    padding-top: 70px;
+    box-sizing: border-box;
+    /* margin-bottom: 20px; */
+}
+
+#page-7 .circle-large p {
     margin-block-start: 0;
     margin-block-end: 0;
 }
