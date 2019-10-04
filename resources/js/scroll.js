@@ -1,11 +1,12 @@
 // Constants
 const WINDOW_HEIGHT = window.innerHeight;
+// const WINDOW_HEIGHT = 1000;
 const BODY = document.body;
 const PAGES = document.getElementsByClassName('page');
 const NUM_PAGES = PAGES.length;
 const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
-const PAGE_BUFFER = 200;
+const PAGE_BUFFER = 180;
 const NUM_PARALLAX_PAGES = 2;
 
 // Variables
@@ -43,6 +44,13 @@ const onLoad = () => {
 
     // init blackout opacity and z-index
     setBlackoutElement(NUM_PAGES, BLACKOUT_OPACITY);
+
+    // hack for preventing parallax item from jumping
+    lastScrollY = window.scrollY || window.pageYOffset;
+    if (lastScrollY >= WINDOW_HEIGHT) {
+        const parallax2 = document.getElementById('parallax-2');
+        parallax2.style.left = `${800 * 0.33}px`
+    }
 };
 
 const onScroll = (e) => {
