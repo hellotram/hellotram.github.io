@@ -8,6 +8,8 @@ const BLACKOUT = document.getElementsByClassName('blackout')[0];
 const BLACKOUT_OPACITY = 0.8;
 const PAGE_BUFFER = 180;
 const NUM_PARALLAX_PAGES = 2;
+const SUBNAV = document.getElementById('subnav');
+const SUBNAV_PAGES = [3, 6, 7, 8];
 
 // Variables
 let lastScrollY = 0; // value used for animation
@@ -29,6 +31,51 @@ const setBlackoutElement = (zIndex, opacity, currentScrollY) => {
     BLACKOUT.style.opacity = opacity;
 }
 
+const updateSubnav = (currentScrollY) => {
+    currentScrollY = currentScrollY || window.pageYOffset;
+    const items = SUBNAV.children;
+    let itemIndex;
+
+    if (currentScrollY < ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[0] - 1) - PAGE_BUFFER)) {
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            item.classList.remove('selected-subnav');
+            item.classList.add('selectable');
+            item.onclick = () => {
+                scrollToElement(SUBNAV_PAGES[i]);
+            }
+        }
+    } else if (currentScrollY >= ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[0] - 1) - PAGE_BUFFER) && currentScrollY <= ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[1] - 1) - PAGE_BUFFER)) {
+        itemIndex = 0;
+    } else  if (currentScrollY >= ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[1] - 1) - PAGE_BUFFER) && currentScrollY <= ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[2] - 1) - PAGE_BUFFER)){
+        // highlight Research subnav
+        itemIndex = 1;
+    } else if (currentScrollY >= ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[2] - 1) - PAGE_BUFFER) && currentScrollY <= ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[3] - 1) - PAGE_BUFFER)) {
+        itemIndex = 2;
+    } else if (currentScrollY >= ((WINDOW_HEIGHT + PAGE_BUFFER) * (SUBNAV_PAGES[3] - 1) - PAGE_BUFFER)) {
+        itemIndex = 3;
+    }
+
+    // highlight current item
+    const currentItem = items[itemIndex];
+    if (currentItem) {
+        currentItem.classList.remove('selectable');
+        currentItem.classList.add('selected-subnav');
+        currentItem.onclick = null;
+
+        // un-highlight other items
+        for (let i = 0; i < items.length; i++) {
+            if (i === itemIndex) continue;
+            const item = items[i];
+            item.classList.remove('selected-subnav');
+            item.classList.add('selectable');
+            item.onclick = () => {
+                scrollToElement(SUBNAV_PAGES[i]);
+            }
+        }
+    }
+};
+
 const onLoad = () => {
     // init body height
     setDocumentBodyHeight();
@@ -44,6 +91,8 @@ const onLoad = () => {
 
     // init blackout opacity and z-index
     setBlackoutElement(NUM_PAGES, BLACKOUT_OPACITY);
+
+    updateSubnav();
 
     // hack for preventing parallax item from jumping
     lastScrollY = window.scrollY || window.pageYOffset;
@@ -147,6 +196,9 @@ const updateElements = () => {
         }
     }
 
+    // update subnav
+    updateSubnav(currentScrollY);
+
     // set blackout opacity and z-index
     setBlackoutElement(currentPageZIndex, currentBlackoutOpacity, currentScrollY);
 
@@ -186,6 +238,13 @@ const onKeyDown = (e) => {
 
         snapToNext(e);
     }
+}
+
+const scrollToElement = (page) => {
+    window.scrollTo({
+        top: (WINDOW_HEIGHT + PAGE_BUFFER) * (page - 1),
+        behavior: 'smooth'
+    });
 }
 
 window.addEventListener('load', onLoad);
