@@ -1,0 +1,34 @@
+#subnav {
+    display: inline-block;
+    position: fixed;
+    bottom: 60px;
+    left: 70px;
+    z-index: 200;
+    font-family: 'Quicksand';
+    font-size: 16px;
+    color: #A0A0A0;
+}
+
+#subnav span {
+    padding: 0 6px 0 1px;
+    display: inline-block;
+}
+
+.end-border {
+    border-right-style: solid;
+    border-right-color: #A0A0A0;
+    border-right-width: 1px;
+}
+
+.selected-subnav {
+    color: #404040;
+    font-weight: bold;
+}
+
+.selectable {
+    cursor: pointer;
+}
+
+.selectable:hover {
+    color: #16C3E9;
+}
