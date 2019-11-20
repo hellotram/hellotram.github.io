@@ -9,7 +9,7 @@ const BLACKOUT_OPACITY = 0.8;
 const PAGE_BUFFER = 180;
 const NUM_PARALLAX_PAGES = 2;
 const SUBNAV = document.getElementById('subnav');
-const SUBNAV_PAGES = [3, 6, 7, 8];
+const SUBNAV_PAGES = [3, 6, 7, 10];
 
 // Variables
 let lastScrollY = 0; // value used for animation
