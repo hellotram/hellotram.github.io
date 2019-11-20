@@ -133,7 +133,7 @@ h1 {
     background-color: #fddfe1;
 }
 
-#page-4, #page-6, #page-8, #page-10 {
+#page-4, #page-6, #page-8, #page-10, #page-12 {
     border-color: #c8f0f9;
     background-color: #fff;
 }
@@ -706,6 +706,7 @@ h1 {
 }
 
 /* PAGE 11 */
+
 #page-11 .inner-content {
     z-index: 2;
     padding-left: 10%;
@@ -744,19 +745,20 @@ h1 {
 
 #page-11 .notes {
     font-family: 'Quicksand';
-    font-size: 18px;
+    font-size: 24px;
     color: #404040;
 }
 
 #page-11 .notes p {
     margin-block-start: 0;
     margin-block-end: 0;
-    width: 80%;
 }
 
 #page-11 .graphics-small {
     width: 28%;
     display: inline-block;
+    position: absolute;
+    top: 15%;
 }
 
 #page-11 .graphics-circles div {
@@ -815,10 +817,40 @@ h1 {
     background-color: white;
     padding-top: 70px;
     box-sizing: border-box;
+    margin-top: 30px;
     /* margin-bottom: 20px; */
 }
 
 #page-11 .circle-large p {
     margin-block-start: 0;
     margin-block-end: 0;
+}
+
+/* PAGE 12 */
+
+#page-12 h2 {
+    color: #16C3E9;
+    margin-bottom: 10px;
+}
+
+#page-12 .content {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+#page-12 .img-container {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#page-12 .img-container img {
+    width: 90%;
+}
+
+#page-12 p {
+    font-family: 'Quicksand';
+    font-size: 24px;
+    margin: 0;
 }
