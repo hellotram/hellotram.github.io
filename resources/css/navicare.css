@@ -613,15 +613,31 @@ h1 {
     font-size: 40px;
 }
 
+#page-10 .inner-content {
+    padding-right: 5%;
+}
+
 #page-10 .content {
     display: inline-block;
     padding-left: 10%;
     width: 60%;
 }
 
+#page-10 .img-container {
+    float: right;
+}
+
+#page-10 .img-container p {
+    margin: 0;
+    font-family: 'Quicksand';
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: -10px;
+}
+
 #phone-img {
     width: 250px;
-    float: right;
 }
 
 #page-10 .graphics {
@@ -714,7 +730,7 @@ h1 {
 
 #page-11 .header-text p {
     font-family: 'Raleway';
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 600;
     color: #16C3E9;
     margin-block-start: 0;
@@ -728,13 +744,14 @@ h1 {
 
 #page-11 .notes {
     font-family: 'Quicksand';
-    font-size: 16px;
+    font-size: 18px;
     color: #404040;
 }
 
 #page-11 .notes p {
     margin-block-start: 0;
     margin-block-end: 0;
+    width: 80%;
 }
 
 #page-11 .graphics-small {
