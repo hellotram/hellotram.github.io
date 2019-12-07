@@ -3,3 +3,44 @@
     justify-content: center;
     align-items: center;
 }
+
+.border {
+    background-color: #FDDFE1;
+    position: fixed;
+}
+
+.right-border, .left-border {
+    width: 30px;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+}
+
+.right-border {
+    right: 0;
+}
+
+.left-border {
+    left: 0;
+}
+
+.top-border, .bottom-border {
+    width: 100vw;
+    height: 30px;
+    left: 0;
+    right: 0;
+}
+
+.top-border {
+    top: 0;
+}
+
+.bottom-border {
+    bottom: 0;
+}
+
+.main-container {
+    height: 5000px;
+    background-color: aqua;
+    overflow-y: auto;
+}

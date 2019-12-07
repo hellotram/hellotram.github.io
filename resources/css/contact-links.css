@@ -1,0 +1,25 @@
+.contact-links-container {
+    display: inline-block;
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    top: 0;
+    padding: 20px 20px 10px 10px;
+}
+
+.contact-links-container li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 5px;
+
+}
+
+.contact-links-container ul {
+    padding-right: 40px;
+    padding-top: 18px;
+}
+
+.contact-links-container img {
+    width: 40px;
+    height: 40px;
+}
