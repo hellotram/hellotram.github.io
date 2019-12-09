@@ -63,21 +63,41 @@ a {
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
-    /* border-style: solid;
-    border-width: 30px;
-    border-color: #FDDFE1; */
+    text-align: center;
+    padding-top: calc((100vh - 365px) / 2);
+    padding-right: 10%;
 }
 
 .logo-container {
-    padding-top: 200px;
+    display: inline-block;
     text-align: center;
+    vertical-align: middle;
+}
+
+.text-container {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .greeting {
-    font-size: 25px;
     font-family: 'Raleway';
-    color: #807D79;
-    text-align: center;
+    font-size: 50px;
+    font-weight: 100;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.greeting span {
+    font-family: 'Tenor Sans';
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.bar {
+    width: 150px;
+    height: 10px;
+    background-color: #8EBDBC;
+    margin-bottom: 20px;
 }
 
 #flower-right {
