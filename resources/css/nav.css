@@ -50,6 +50,11 @@ li {
     cursor: pointer;
     outline: none;
     background-color: transparent;
+    padding: 5px 0 0 10px;
+}
+
+#work-subnav {
+    padding-left: 15px;
 }
 
 #work-nav:hover {
