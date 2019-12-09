@@ -16,7 +16,8 @@
     <link rel="icon" type="image/png" href="assets/img/ID_Symbol.png">
     <link rel="stylesheet" href="resources/css/nav.css">
     <link rel="stylesheet" href="resources/css/contact.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:500,600,700|Quicksand:400,500,600,700">
+    <link rel="stylesheet" href="resources/css/contact-links.css">
+    <link rel="stylesheet" href="resources/css/fonts.css">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <!-- <script src="resources/js/move.js" async defer></script> -->
+    <script src="resources/js/contactForm.js" defer></script>
     <nav class="nav-container">
         <ul>
             <li>
@@ -34,20 +35,47 @@
             </li>
             <li><a class="nav-link" href="index.html">WORK</a></li>
             <li><a class="nav-link" href="about.html">ABOUT</a></li>
-            <li><a class="selected nav-link"href="contact.html">CONTACT</a></li>
+            <li><a class="selected nav-link" href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
+    <div class="contact-links-container">
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/tramnguyentn/" target="_blank">
+                    <img src="assets/img/linkedin-icon.svg" alt="Link to LinkedIn profile">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/traaam.design2019/" target="_blank">
+                    <img src="assets/img/instagram-icon.svg" alt="Link to Instagram profile">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.behance.net/jumpnguyen" target="_blank">
+                    <img src="assets/img/behance-icon.svg" alt="Link to Behance portfolio">
+                </a>
+            </li>
+        </ul>
+    </div>
     <main class="main-container">
-        CONTACT
         <div class="contact-container">
-            <span>Tram Nguyen</span>
-            <span>jumpnguyen@gmail.com</span>
-            <span>(702) 985-9294</span>
+            <div class="intro-container">
+                <h1>LET'S TALK UX</h1>
+                <p>Leave me a message and PINKY promise I will get back to you as soon as I can.</p>
+            </div>
+            <form id="my-form" action="https://formspree.io/xpzwkoon" method="POST">
+                <input id="name" type="text" name="name" placeholder="Your name...">
+                <input id="email" type="email" name="email" placeholder="Email address..."/>
+                <input id="message" type="text" name="message" placeholder="Message..."/>
+                <button id="my-form-button">Submit</button>
+                <p id="my-form-status"></p>
+            </form>
+            <div class="ps-container">
+                <p>P.S. If you can't wait, email me at</p>
+                <a href="mailto:traaam.design@gmail.com" target="_blank">traaam.design@gmail.com</a>
+            </div>
         </div>
     </main>
 </body>
 
 </html>
-
-
-
