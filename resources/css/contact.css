@@ -31,7 +31,7 @@ h1 {
 
 .intro-container p {
     font-family: 'Raleway';
-    font-size: 25px;
+    font-size: 16px;
     font-weight: 300;
     margin: 0 0 25px 0;
     width: 85%;
@@ -63,14 +63,14 @@ input {
 
 #my-form-status {
     font-family: 'Quicksand';
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     color: #7fa8a9;
 }
 
 .ps-container {
     font-family: 'Raleway';
-    font-size: 25px;
+    font-size: 16px;
     font-weight: 300;
     margin: 40px 0;
     width: 85%;
@@ -82,4 +82,5 @@ input {
 
 .ps-container a {
     text-decoration: none;
+    color: #54A5A3;
 }
