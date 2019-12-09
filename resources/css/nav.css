@@ -40,3 +40,26 @@ li {
 .nav-container .selected {
     color: #7fa8a9;
 }
+
+#work-nav {
+    border: none;
+    color: #e87e6f;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Raleway';
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+}
+
+#work-nav:hover {
+    color: #7fa8a9;
+}
+
+.collapsible {
+    display: none;
+}
+
+.show {
+    display: block;
+}

@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="assets/img/ID_Symbol.png">
     <link rel="stylesheet" href="resources/css/nav.css">
-    <link rel="stylesheet" href="resources/css/subnav.css">
+    <link rel="stylesheet" href="resources/css/navicare-subnav.css">
     <link rel="stylesheet" href="resources/css/navicare.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:500,600,700|Quicksand:400,500,600,700">
 </head>
@@ -26,6 +26,7 @@
         <![endif]-->
 
     <script src="resources/js/scroll.js" async defer></script>
+    <script src="resources/js/navigation.js" defer></script>
     <nav class="nav-container">
         <ul>
             <li>
@@ -33,7 +34,12 @@
                     <img src="assets/img/ID_Symbol.png" alt="Tram Nguyen Logo">
                 </a>
             </li>
-            <li><a class="selected nav-link" href="index.html">WORK</a></li>
+            <li><button id="work-nav">WORK</button>
+                <ul id="work-subnav" class="collapsible">
+                    <li><a class="selected nav-link" href="navicare.html">Navicare</a></li>
+                    <li><a class="nav-link" href="zsfg.html">Zuckerberg Hospital</a></li>
+                </ul>
+            </li>
             <li><a class="nav-link" href="about.html">ABOUT</a></li>
             <li><a class="nav-link"href="contact.html">CONTACT</a></li>
         </ul>
