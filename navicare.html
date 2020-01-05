@@ -26,11 +26,12 @@
         <![endif]-->
 
     <script src="resources/js/navigation.js" defer></script>
+    <script src="resources/js/subnav.js" defer></script>
     <nav class="nav-container">
         <ul>
             <li>
                 <a href="index.html">
-                    <img src="assets/img/ID_Symbol.png" alt="Tram Nguyen Logo">
+                    <img src="assets/img/ID_Symbol.png" loading="lazy" alt="Tram Nguyen Logo">
                 </a>
             </li>
             <li><button id="work-nav">WORK</button>
@@ -44,32 +45,37 @@
         </ul>
     </nav>
     <div id="subnav">
-        <span class="end-border selectable" onclick="scrollToElement(3)">Intro</span>
-        <span class="end-border selectable" onclick="scrollToElement(6)">Research</span>
-        <span class="end-border selectable" onclick="scrollToElement(7)">Feature</span>
-        <span class="selectable" onclick="scrollToElement(8)">Visual</span>
+        <!-- TODO: update subnav -->
+        <span class="end-border selectable" onclick="scrollToElement('page-2')">Intro</span>
+        <span class="end-border selectable" onclick="scrollToElement('page-6')">Research</span>
+        <span class="end-border selectable" onclick="scrollToElement('page-7')">Feature</span>
+        <span class="selectable" onclick="scrollToElement('page-10')">Visual</span>
     </div>
+    <div class="border right-border"></div>
+    <div class="border left-border"></div>
+    <div class="border top-border"></div>
+    <div class="border bottom-border"></div>
     <main class="main-container">
         <div class="pages-container">
-            <section class="" id="page-1">
+            <section id="page-1">
                 <div class="content-container">
                     <div class="logo-container">
-                        <img id="logo" src="assets/img/navicare-logo.svg" alt="navicare-logo">
+                        <img id="logo" src="assets/img/navicare-logo.svg" loading="lazy" alt="navicare-logo">
                         <div class="text-container">
-                            <p>Health assistance in control</p>
-                            <p>for families of children with critical illnesses</p>
+                            <h1>
+                                <p>Health assistance in control</p>
+                                <p>for families of children with critical illnesses</p>
+                            </h1>
                             <a href="https://www.figma.com/proto/wjDbN6vCnL3PHEzl3anbX9/Wireframe_website?node-id=334%3A0&scaling=scale-down" target="_blank">View Prototype</a>
                         </div>
                     </div>
-                    <img id="landing-img" src="assets/img/landing-page.svg" alt="">
+                    <img id="landing-img" src="assets/img/landing-page.svg" loading="lazy" alt="">
                 </div>
             </section>
-            <section class="" id="page-3">
+            <section id="page-2">
                 <div class="content-container">
-                    <img class="background-1" src="assets/img/Logo_background.png" alt="logo-background-1" loading="lazy">
-                    <img class="background-2" src="assets/img/Logo_background.png" alt="logo-background-2" loading="lazy">
                     <div class="inner-content">
-                        <h2>Our awesome team</h2>
+                        <h2 class="header-text alt-color">Our awesome team</h2>
                         <div class="content-desc">
                             <p>Navicare is a concept project conducted under the supervision of the General Assembly instructing staff.</p>
                             <p>Our team includes:</p>
@@ -109,7 +115,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-4">
+            <section id="page-4">
                 <div class="content-container">
                     <div class="inner-content">
                         <h2>Childhood critical illnesses have been on the rise</h2>
@@ -125,7 +131,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-5">
+            <section id="page-5">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="content">
@@ -140,7 +146,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-6">
+            <section id="page-6">
                 <div class="content-container">
                     <img class="graphic" src="assets/img/check-mark.svg" alt="" loading="lazy">
                     <div class="inner-content">
@@ -165,7 +171,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-7">
+            <section id="page-7">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="left">
@@ -196,7 +202,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-8">
+            <section id="page-8">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="left">
@@ -227,7 +233,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-9">
+            <section id="page-9">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="left">
@@ -259,7 +265,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-10">
+            <section id="page-10">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="content">
@@ -288,7 +294,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-11">
+            <section id="page-11">
                 <div class="content-container">
                     <img class="background" src="assets/img/half-circle-background.svg" alt="" loading="lazy">
                     <div class="inner-content">
@@ -328,7 +334,7 @@
                     </div>
                 </div>
             </section>
-            <section class="" id="page-12">
+            <section id="page-12">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="content">
