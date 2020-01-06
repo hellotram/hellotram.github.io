@@ -16,8 +16,8 @@
     <link rel="icon" type="image/png" href="assets/img/ID_Symbol.png">
     <link rel="stylesheet" href="resources/css/nav.css">
     <link rel="stylesheet" href="resources/css/navicare-subnav.css">
-    <link rel="stylesheet" href="resources/css/navicare.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:500,600,700|Quicksand:400,500,600,700">
+    <link rel="stylesheet" href="resources/css/navicare-static.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,600,700|Quicksand:400,400i,500,600,700">
 </head>
 
 <body>
@@ -25,13 +25,14 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <script src="resources/js/scroll.js" async defer></script>
     <script src="resources/js/navigation.js" defer></script>
+    <!-- <script src="resources/js/subnav.js" defer></script> -->
+    <script src="resources/js/smoothAnchorScroll.js" defer></script>
     <nav class="nav-container">
         <ul>
             <li>
                 <a href="index.html">
-                    <img src="assets/img/ID_Symbol.png" alt="Tram Nguyen Logo">
+                    <img src="assets/img/ID_Symbol.png" loading="lazy" alt="Tram Nguyen Logo">
                 </a>
             </li>
             <li><button id="work-nav">WORK</button>
@@ -45,42 +46,41 @@
         </ul>
     </nav>
     <div id="subnav">
-        <span class="end-border selectable" onclick="scrollToElement(3)">Intro</span>
-        <span class="end-border selectable" onclick="scrollToElement(6)">Research</span>
-        <span class="end-border selectable" onclick="scrollToElement(7)">Feature</span>
-        <span class="selectable" onclick="scrollToElement(8)">Visual</span>
+        <!-- <span class="end-border selectable" onclick="scrollToElement('page-2')">Intro</span>
+        <span class="end-border selectable" onclick="scrollToElement('page-6')">Research</span>
+        <span class="end-border selectable" onclick="scrollToElement('page-7')">Feature</span>
+        <span class="selectable" onclick="scrollToElement('page-10')">Visual</span> -->
+        <a class="end-border selectable" href="#page-2">Intro</a>
+        <a class="end-border selectable" href="#page-5">Research</a>
+        <a class="end-border selectable" href="#page-7">Feature</a>
+        <a class="selectable" href="#page-10">Visual</a>
     </div>
-    <div class="parallax-container">
-        <div id="parallax-1">
-            <img src="assets/img//Navicare_logo-05.png" alt="navicare-logo">
-            <a href="https://docs.google.com/presentation/d/1nIUKQ3C3tOnaY4-VeYkzOlkj5TYh1GUUyALFLJrkzAI/edit#slide=id.p" target="_blank">View Detailed Case Study</a>
-        </div>
-        <div id="parallax-2">
-            <img class="clip-svg" src="assets/img/Landing Page.jpg" alt="">
-        </div>
-    </div>
+    <div class="border right-border"></div>
+    <div class="border left-border"></div>
+    <div class="border top-border"></div>
+    <div class="border bottom-border"></div>
     <main class="main-container">
         <div class="pages-container">
-            <div class="blackout"></div>
-            <section class="page current-page" id="page-1">
+            <section id="page-1">
                 <div class="content-container">
-                    <div class="inner-content">
+                    <div class="logo-container">
+                        <img id="logo" src="assets/img/navicare-logo.svg" loading="lazy" alt="navicare-logo">
+                        <div class="text-container">
+                            <h1>
+                                <p>Health assistance in control</p>
+                                <p>for families of children with critical illnesses</p>
+                            </h1>
+                            <a class="font-xsmall" href="https://www.figma.com/proto/wjDbN6vCnL3PHEzl3anbX9/Wireframe_website?node-id=334%3A0&scaling=scale-down" target="_blank">View Prototype</a>
+                        </div>
                     </div>
+                    <img id="landing-img" src="assets/img/landing-page.svg" loading="lazy" alt="">
                 </div>
             </section>
-            <section class="page next-page" id="page-2">
+            <section id="page-2">
                 <div class="content-container">
                     <div class="inner-content">
-                    </div>
-                </div>
-            </section>
-            <section class="page next-page" id="page-3">
-                <div class="content-container">
-                    <img class="background-1" src="assets/img/Logo_background.png" alt="logo-background-1">
-                    <img class="background-2" src="assets/img/Logo_background.png" alt="logo-background-2">
-                    <div class="inner-content">
-                        <h2>Our awesome team</h2>
-                        <div class="content-desc">
+                        <h2 class="header-text alt-color">Our awesome team</h2>
+                        <div class="content-desc font-small">
                             <p>Navicare is a concept project conducted under the supervision of the General Assembly instructing staff.</p>
                             <p>Our team includes:</p>
                             <div class="attribution">
@@ -101,6 +101,28 @@
                                 <p>Data Analysis</p>
                                 <p>Prototyping</p>
                             </div>
+                            <div>
+                                <div>
+                                    <span class="font-bold">Company: </span>
+                                    <span>Johnson & Johnson</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Problem to solve: </span>
+                                    <span>New product</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Format: </span>
+                                    <span>Mobile app</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Assignment Method: </span>
+                                    <span>Flow diagram, workshop</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Design Deliverables: </span>
+                                    <span>High fidelity prototype, task flows, MVP</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="graphics">
                             <div class="graphic-cell">
@@ -119,84 +141,130 @@
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-4">
+            <section id="page-3">
                 <div class="content-container">
                     <div class="inner-content">
-                        <h2>Childhood critical illnesses have been on the rise</h2>
-                        <div class="content-desc">
-                            <p>In America, 13,000 children are diagnosed with cancer each year, 200,000 children live with either type 1 or type 2 diabetes, and 9 million children suffer from asthma.</p>
-                            <p>With that rising number of cases, <strong>cost of treatment</strong> and care are also <strong>extremely high</strong>. Sadly, a majority of patients come from lower income, minority, and uninsured families. Even if they are insured, that doesn't mean they can afford paying the flood of medical bills coming their way.</p>
+                        <h2 class="header-text">Childhood critical illnesses have been on the rise</h2>
+                        <div class="content-desc font-small">
+                            <div class="margin-bottom-med">
+                                <p class="margin-none">In America, 13,000 children are diagnosed with cancer each year,</p>
+                                <p class="margin-none">200,000 children live with either type 1 or type 2 diabetes,</p>
+                                <p class="margin-none">and 9 million children suffer from asthma.</p>
+                            </div>
+                            <div>
+                                <p class="margin-none">With that rising number of cases, <strong>cost of treatment</strong> and care are also <strong>extremely high</strong>.</p>
+                                <p class="margin-none">Sadly, a majority of patients come from lower income, minority, and uninsured families.</p>
+                                <p class="margin-none">Even if they are insured, that doesn't mean they can afford paying the flood of medical bills</p>
+                                <p class="margin-none">coming their way.</p>
+                            </div>
                             <div class="quote-container">
-                                <img src="assets/img/quote.svg" alt="">
-                                <p class="quote">Financially, it was a disaster coming. Her first hospital bill, not including surgery and anesthesia, was $308,000.00.</p>
-                                <p>-Kellie, whose daughter has a serious disability</p>
+                                <img src="assets/img/quote.svg" alt="" loading="lazy">
+                                <p class="quote">Financially, it was a disaster coming.</p>
+                                <p class="quote">Her first hospital bill, not including surgery and</p>
+                                <p class="quote">anesthesia, was $308,000.00.</p>
+                                <p class="quote-attr font-xsmall">-Kellie, whose daughter has a serious disability</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-5">
+            <section id="page-4">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="content">
-                            <h2>Our Proposal</h2>
-                            <h3><span class="grey">Navi</span><span class="red">care</span>, the bridge between families of kids with critical illnesses and assistance resources.</h3>
-                            <div class="content-desc">
-                                <p>Parents and guardians of kids with chronic conditions may feel overwhelmed by the cost and demands of medical care and may lack the resources to seek out assistance.</p>
-                                <p>Having all those concerns in mind, we proudly proposed <strong>Navicare</strong>, an app that could help families of children with critical illnesses find the right assistance resources they need, set up the first steps of enrolling and keep track of their progresses.</p>
+                            <h2 class="font-medium margin-bottom-med primary-color">Our Proposal</h2>
+                            <h3 class="font-large alt-color"><span class="grey">Navi</span><span class="red">care</span>, the bridge between families of kids with critical illnesses and assistance resources.</h3>
+                            <div class="content-desc font-small">
+                                <p class="margin-bottom-med">Parents and guardians of kids with chronic conditions may feel overwhelmed by the cost and demands of medical care and may lack the resources to seek out assistance.</p>
+                                <p class="margin-bottom-med">Having all those concerns in mind, we proudly proposed <strong>Navicare</strong>, an app that could help families of children with critical illnesses find the right assistance resources they need, set up the first steps of enrolling and keep track of their progresses.</p>
+                                <p class="margin-bottom-med">Navicare, inspired by the missions done by <strong>Johnson & Johnson</strong>, will continue deliver its sponsored company’s objectives, and help families of children in need, starting with this app. </p>
                             </div>
-                        </div>
-                        <img src="assets/img/navicare.svg" alt="">
-                    </div>
-                </div>
-            </section>
-            <section class="page next-page" id="page-6">
-                <div class="content-container">
-                    <img class="graphic" src="assets/img/check-mark.svg" alt="">
-                    <div class="inner-content">
-                        <div class="left">
-                            <h3>Features</h3>
-                            <div class="list">
-                                <p>&#x2022; Lack of process tracking</p>
-                                <p>&#x2022; Financial assistance isn't the priority</p>
-                                <p>&#x2022; Saving feature is a competitive edge</p>
+                            <div class="img-container">
+                                <img src="assets/img/parent-1.svg" alt="" loading="lazy">
+                                <img src="assets/img/parent-2.svg" alt="" loading="lazy">
                             </div>
-                            <h3 class="other-obs">Other observations</h3>
-                            <div class="list">
-                                <p>&#x2022; Complicated navigation</p>
-                                <p>&#x2022; Difficult navigation</p>
-                                <p>&#x2022; Color palette is not user friendly</p>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <h2>What has been done?</h2>
-                            <img src="assets/img/chart.svg" alt="">
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-7">
+            <section id="page-5">
+                <div class="content-container">
+                    <img class="graphic" src="assets/img/check-mark.svg" alt="" loading="lazy">
+                    <div class="inner-content">
+                            <div class="left">
+                                <h3 class="font-small primary-color">Features</h3>
+                                <ul class="list font-small">
+                                    <li>&#x2022; Lack of process tracking</li>
+                                    <li>&#x2022; Financial assistance isn't the priority</li>
+                                    <li>&#x2022; Saving feature is a competitive edge</li>
+                                </ul>
+                                <h3 class="font-small primary-color margin-top-large">Other observations</h3>
+                                <ul class="list font-small">
+                                    <li>&#x2022; Complicated navigation</li>
+                                    <li>&#x2022; Difficult navigation</li>
+                                    <li>&#x2022; Color palette is not user friendly</li>
+                                </ul>
+                            </div>
+                            <div class="right">
+                                <h2 class="font-large alt-color">What has been done?</h2>
+                                <img src="assets/img/chart.svg" alt="" loading="lazy">
+                            </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-6">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="left">
-                            <div class="concern">Concern 1</div>
-                            <h2>How to get access to support resources?</h2>
-                            <h3 class="other-obs">User Behavior</h3>
-                            <div class="list">
-                                <p>Unaware of the existence of resources</p>
+                            <img src="assets/img/mvp-chart.svg" alt="" loading="lazy">
+                            <p class="font-xsmall">MVP chart</p>
+                        </div>
+                        <div class="right">
+                            <h2 class="font-large alt-color">
+                                <p>Most important feature -</p>
+                                <p>To search for a treatment</p>
+                            </h2>
+                            <div class="text-container">
+                                <p class="margin-none">Thanks to comparative analysis, we realized that the most important feature that has to be present for this app is the <strong>Search tool</strong>. However, the app could not just function on one feature alone. The team then did a generative workshop and brainstormed any other potential features which were categorized in an <strong>MVP chart</strong> (Minimum viable product), so that we could align on what to work on first in the given timeframe.</p>
+                                <p class="margin-none">After figuring out what features we should have for our apps, I then moved on to setting up 3 main work flows that covers these features:</p>
+                                <ul>
+                                    <li>&#x2022; Conduct a search for a treatment</li>
+                                    <li>&#x2022; Save the treatment program option</li>
+                                    <li>&#x2022; Organize watch list and apply</li>
+                                </ul>
                             </div>
-                            <h3 class="other-obs">Goals</h3>
+                        </div>
+                    </div>
+                    <div class="graphics">
+                        <img src="assets/img/work-flow-chart.svg" alt="" loading="lazy">
+                        <p class="font-xsmall">Work flow chart</p>
+                    </div>
+                </div>
+            </section>
+            <section id="page-7">
+                <div class="content-container">
+                    <div class="inner-content">
+                        <div class="left">
+                            <div class="concern font-medium font-bold">Concern 1</div>
+                            <h2 class="font-large alt-color margin-bottom-med">How to get access to support resources?</h2>
+                            <h3 class="font-small primary-color">User Behavior</h3>
                             <div class="list">
-                                <p>To find the most suitable resources for user's needs</p>
+                                <p class="font-small">Unaware of the existence of resources</p>
                             </div>
-                            <h3 class="other-obs">Features</h3>
+                            <h3 class="font-small primary-color">Goals</h3>
                             <div class="list">
-                                <p>&#x2022; Category filter for precise search list</p>
-                                <p>&#x2022; Progressive disclosure info list for quick scanning</p>
+                                <p class="font-small">To find the most suitable resources for user's needs</p>
+                            </div>
+                            <h3 class="font-small primary-color">Features</h3>
+                            <div class="list">
+                                <ul>
+                                    <li class="font-small">&#x2022; Category filter for precise search list</li>
+                                    <li class="font-small">&#x2022; Progressive disclosure info list for quick scanning</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="right">
-                            <img src="assets/img/1.svg" alt="">
+                            <img src="assets/img/1.svg" alt="" loading="lazy">
                             <div class="video">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/video/vid1.mp4" type="video/mp4">
@@ -206,11 +274,11 @@
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-8">
+            <section id="page-8">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="left">
-                            <img src="assets/img/2.svg" alt="">
+                            <img src="assets/img/2.svg" alt="" loading="lazy">
                             <div class="video">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/video/vid2.mp4" type="video/mp4">
@@ -218,48 +286,54 @@
                             </div>
                         </div>
                         <div class="right">
-                            <div class="concern">Concern 2</div>
-                            <h2>How to quickly apply for multiple resources?</h2>
-                            <h3 class="other-obs">User Behavior</h3>
+                            <div class="concern font-medium font-bold">Concern 2</div>
+                            <h2 class="font-large alt-color margin-bottom-med">How to quickly apply for multiple resources?</h2>
+                            <h3 class="font-small primary-color">User Behavior</h3>
                             <div class="list">
-                                <p>Spend endless of time calling and applying for assistance resources</p>
+                                <p class="font-small">Spends endless of time calling and applying for assistance resources</p>
                             </div>
-                            <h3 class="other-obs">Goals</h3>
+                            <h3 class="font-small primary-color">Goals</h3>
                             <div class="list">
-                                <p>Call and apply for these resources quickly</p>
+                                <p class="font-small">Call and apply for these resources quickly</p>
                             </div>
-                            <h3 class="other-obs">Features</h3>
+                            <h3 class="font-small primary-color">Features</h3>
                             <div class="list">
-                                <p>&#x2022; Multiple phone call buttons</p>
-                                <p>&#x2022; Signifier for phone number / online application form</p>
+                                <ul>
+                                    <li>&#x2022; Multiple phone call buttons</li>
+                                    <li>&#x2022; Signifier for availability of phone number / online application form</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-9">
+            <section id="page-9">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="left">
-                            <div class="concern">Concern 3</div>
-                            <h2>How to keep track of the applying process?</h2>
-                            <h3 class="other-obs">User Behavior</h3>
+                            <div class="concern font-medium font-bold">Concern 3</div>
+                            <h2 class="font-large alt-color margin-bottom-med">How to keep track of the applying process?</h2>
+                            <h3 class="font-small primary-color">User Behavior</h3>
                             <div class="list">
-                                <p>&#x2022; Lose focus of applying process</p>
-                                <p>&#x2022; Forget to follow up with the resources</p>
+                                <ul>
+                                    <li>&#x2022; Lose focus of applying process</li>
+                                    <li>&#x2022; Forget to follow up with the resources</li>
+                                </ul>
                             </div>
-                            <h3 class="other-obs">Goals</h3>
+                            <h3 class="font-small primary-color">Goals</h3>
                             <div class="list">
-                                <p>Check for applying progress</p>
+                                <p class="font-small">Check for applying progress</p>
                             </div>
-                            <h3 class="other-obs">Features</h3>
+                            <h3 class="font-small primary-color">Features</h3>
                             <div class="list">
-                                <p>&#x2022; Personalized saving list</p>
-                                <p><div>&#x2022;</div> <div class="long">Relative time to date of application submission or phone call made</div></p>
+                                <ul>
+                                    <li class="font-small">&#x2022; Personalized saving list</li>
+                                    <li class="font-small">&#x2022; Relative time to date of application submission or phone call made</li>
+                                </ul>
                             </div>
                         </div>
                         <div class="right">
-                            <img src="assets/img/3.svg" alt="">
+                            <img src="assets/img/3.svg" alt="" loading="lazy">
                             <div class="video">
                                 <video autoplay loop muted playsinline>
                                     <source src="assets/video/vid3.mp4" type="video/mp4">
@@ -269,20 +343,20 @@
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-10">
+            <section id="page-10">
                 <div class="content-container">
                     <div class="inner-content">
-                        <div class="content">
-                            <h3>Our color palette has gone through a <span>transformation</span></h3>
+                        <div class="left">
+                            <h2 class="font-large alt-color margin-bottom-med">Our color palette has gone through a <span class="primary-color">transformation</span></h2>
                             <div class="content-desc">
-                                <p>Navicare, as sponsored by Johnson & Johnson, is trying to reflect its branding within the color palette.</p>
-                                <p>Unfortunately, our inital color palette showed a majority of Red hint which reportedly has caused users unwelcoming feelings.</p>
-                                <p>This is a challenge needed to be address so more users can find the app more accessible</p>
+                                <p class="font-small">Navicare, as sponsored by Johnson & Johnson, is trying to reflect its branding within the color palette.</p>
+                                <p class="font-small">Unfortunately, our inital color palette showed a majority of Red hint which reportedly has caused users unwelcoming feelings.</p>
+                                <p class="font-small">This is a challenge needed to be address so more users can find the app more accessible</p>
                             </div>
                             <div class="graphics">
-                                <div id="navi-img"><img src="assets/img/navicare-small.svg" alt=""></div>
+                                <div id="navi-img"><img src="assets/img/navicare-small.svg" alt="" loading="lazy"></div>
                                 <div id="divider">X</div>
-                                <div id="johnson"><img src="assets/img/johnson.svg" alt=""></div>
+                                <div id="johnson"><img src="assets/img/johnson.svg" alt="" loading="lazy"></div>
                             </div>
                             <div class="graphics-circles">
                                 <div id="gray">Light Gray</div>
@@ -292,28 +366,26 @@
                             </div>
                         </div>
                         <div class="img-container">
-                            <img id="phone-img" src="assets/img/phone.svg" alt="">
-                            <p>Old design, pre-iteration</p>
+                            <img id="phone-img" src="assets/img/phone.svg" alt="" loading="lazy">
+                            <p class="font-xsmall">Old design, pre-iteration</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-11">
+            <section id="page-11">
                 <div class="content-container">
-                    <img class="background" src="assets/img/half-circle-background.svg" alt="">
+                    <img class="background" src="assets/img/half-circle-background.svg" alt="" loading="lazy">
                     <div class="inner-content">
-                        <div class="text-container">
-                            <div class="header-text">
+                        <div class="left">
+                            <h2 class="font-large alt-color margin-bottom-med">
                                 <p>Calming,</p>
                                 <p class="accent">Gentle,</p>
                                 <p>Accessible</p>
                                 <p>through the new palette</p>
-                            </div>
-                            <div class="notes">
-                                <p>After testing and trials, we have considered adding a shade of blue to the palette.  This color choice is still part of Johnson & Johnson’s original color palette, and at the same time a great accent to the intensity of red. With the new color palette, users will find it easy with the readability and scannability.</p>
-                            </div>
+                            </h2>
+                            <p class="font-small">After testing and trials, we have considered adding a shade of blue to the palette. This color choice is still part of Johnson & Johnson’s original color palette, and at the same time a great accent to the intensity of red. With the new color palette, users will find it easy with the readability and scannability.</p>
                         </div>
-                        <div class="graphics-small">
+                        <div class="right">
                             <div class="graphics-circles">
                                 <div id="light-blue">Light Blue</div>
                                 <div id="blue">Blue</div>
@@ -321,35 +393,37 @@
                                 <div id="red-2">Red</div>
                             </div>
                         </div>
-                        <div class="graphics-large">
-                            <div class="circle-large">
-                                <p>4.53 : 1</p>
-                                <p>Constrast Ratio</p>
-                            </div>
-                            <div class="circle-large">
-                                <p>Pass</p>
-                                <p>WCAG AA</p>
-                            </div>
-                            <div class="circle-large">
-                                <p>Pass</p>
-                                <p>WCAG AAA</p>
-                            </div>
+                    </div>
+                    <div class="graphics-large">
+                        <div class="circle-large">
+                            <p>4.53 : 1</p>
+                            <p>Constrast Ratio</p>
+                        </div>
+                        <div class="circle-large">
+                            <p>Pass</p>
+                            <p>WCAG AA</p>
+                        </div>
+                        <div class="circle-large">
+                            <p>Pass</p>
+                            <p>WCAG AAA</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-12">
+            <section id="page-12">
                 <div class="content-container">
                     <div class="inner-content">
                         <div class="content">
-                            <h2>Upon next steps,</h2>
-                            <p>Since the product was created under time constraints, we didn’t get to test the end product with potential users. Therefore, if given more opportunities, we would further improve the product by:</p>
-                            <p>&#x2022; Doing additional user testing</p>
-                            <p>&#x2022; Iterating on additional user feedback</p>
-                            <p>&#x2022; Adding Rating Feature for each recommended service</p>
+                            <h2 class="font-large alt-color margin-bottom-med">Upon next steps,</h2>
+                            <p class="font-small">Since the product was created under time constraints, we didn’t get to test the end product with potential users. Therefore, if given more opportunities, we would further improve the product by:</p>
+                            <ul>
+                                <li class="font-small">&#x2022; Doing additional user testing</li>
+                                <li class="font-small">&#x2022; Iterating on additional user feedback</li>
+                                <li class="font-small">&#x2022; Adding Rating Feature for each recommended service</li>
+                            </ul>
                         </div>
                         <div class="img-container">
-                            <img src="assets/img/phone-mocks.svg" alt="">
+                            <img src="assets/img/phone-mocks.svg" alt="" loading="lazy">
                         </div>
                     </div>
                 </div>
