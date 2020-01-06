@@ -99,7 +99,6 @@ section {
 }
 
 .content-desc p {
-    line-height: 30px;
     margin-top: 28px;
     margin-bottom: 28px;
 }
@@ -194,7 +193,7 @@ section {
 #page-2 .content-desc {
     width: 65%;
     position: relative;
-    /* top: 120px; */
+    margin-bottom: 30px;
     left: 30%;
     text-align: left;
     min-width: 515px;
