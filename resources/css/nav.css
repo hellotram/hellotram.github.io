@@ -55,6 +55,7 @@ li {
 
 #work-subnav {
     padding-left: 15px;
+    transition: all .5s ease;
 }
 
 #work-nav:hover {
@@ -62,9 +63,11 @@ li {
 }
 
 .collapsible {
-    display: none;
+    opacity: 0;
+    height: 0;
 }
 
 .show {
-    display: block;
+    opacity: 1;
+    height: 48px;
 }
