@@ -41,6 +41,10 @@ li {
     color: #7fa8a9;
 }
 
+#index a {
+    width: 75px;
+}
+
 #work-nav {
     border: none;
     color: #e87e6f;
@@ -56,6 +60,7 @@ li {
 #work-subnav {
     padding-left: 15px;
     transition: all .5s ease;
+    position: relative;
 }
 
 #work-nav:hover {
@@ -65,9 +70,11 @@ li {
 .collapsible {
     opacity: 0;
     height: 0;
+    right: 250px;
 }
 
 .show {
     opacity: 1;
     height: 48px;
+    right: 0;
 }
