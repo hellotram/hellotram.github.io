@@ -15,17 +15,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="assets/img/ID_Symbol.png">
     <link rel="stylesheet" href="resources/css/nav.css">
-    <link rel="stylesheet" href="resources/css/zsfg.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:500,600,700|Quicksand:400,500,600,700">
+    <link rel="stylesheet" href="resources/css/zsfg-subnav.css">
+    <link rel="stylesheet" href="resources/css/zsfg-static.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,600,700|Quicksand:400,400i,500,600,700">
 </head>
-
+<!-- TODO: optimize landing images -->
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <script src="resources/js/scroll.js" async defer></script>
     <script src="resources/js/navigation.js" defer></script>
+    <!-- <script src="resources/js/subnav.js" async defer></script> -->
+    <script src="resources/js/smoothAnchorScroll.js" defer></script>
     <nav class="nav-container">
         <ul>
             <li id="index">
@@ -35,182 +37,207 @@
             </li>
             <li><button id="work-nav">WORK</button>
                 <ul id="work-subnav" class="collapsible">
-                    <li><a class="nav-link" href="navicare.html">Navicare</a></li>
-                    <li><a class="selected nav-link" href="zsfg.html">Zuckerberg Hospital</a></li>
+                    <li><a class="selected nav-link" href="navicare.html">Navicare</a></li>
+                    <li><a class="nav-link" href="zsfg.html">Zuckerberg Hospital</a></li>
                 </ul>
             </li>
             <li><a class="nav-link" href="about.html">ABOUT</a></li>
             <li><a class="nav-link"href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
-    <div class="parallax-container">
-        <div id="parallax-1">
-            <p>Zuckerberg San Francisco General Hospital</p>
-        </div>
-        <div id="parallax-2">
-            <img class="clip-svg" src="assets/img/zsfg-mock-full.svg" alt="">
-        </div>
+    <div id="subnav">
+        <!-- <span class="end-border selectable" onclick="scrollToElement('page-2')">Intro</span>
+        <span class="end-border selectable" onclick="scrollToElement('page-6')">Research</span>
+        <span class="end-border selectable" onclick="scrollToElement('page-7')">Feature</span>
+        <span class="selectable" onclick="scrollToElement('page-10')">Visual</span> -->
+        <a class="end-border selectable" href="#page-2">Intro</a>
+        <a class="end-border selectable" href="#page-5">Research</a>
+        <a class="end-border selectable" href="#page-7">Feature</a>
+        <a class="selectable" href="#page-10">Visual</a>
     </div>
+    <div class="border right-border"></div>
+    <div class="border left-border"></div>
+    <div class="border top-border"></div>
+    <div class="border bottom-border"></div>
     <main class="main-container">
         <div class="pages-container">
-            <div class="blackout"></div>
-            <section class="page current-page" id="page-1">
+            <section id="page-1">
                 <div class="content-container">
-                    <div class="inner-content">
-                    </div>
-                </div>
-            </section>
-            <section class="page next-page" id="page-2">
-                <div class="content-container">
-                    <div class="inner-content">
-                    </div>
-                </div>
-            </section>
-            <section class="page next-page" id="page-3">
-                <div class="content-container">
-                    <div class="inner-content">
-                        <h2>Childhood critical illnesses have been on the rise</h2>
-                        <div class="content-desc">
-                            <p>There has been a <strong>significant increase</strong> in children in recent decades - up 27% since 1975 in kids under age 19.</p>
-                            <p>Families of these children, once hit with the news, have to cope with <strong>different</strong> kinds of <strong>problems</strong> - treatment, household bills, transportation, and more.</p>
-                            <p>The process of finding and asking for help from multiple organizations is oftentimes tedious and repetitive.</p>
-                        </div>
-                        <div class="emphasis"><p>That elongates the treatment time and worsens the situation.</p></div>
-                    </div>
-                </div>
-            </section>
-            <section class="page next-page" id="page-4">
-                <div class="content-container">
-                    <div class="inner-content">
-                        <h1>About ZSFG</h2>
-                        <div class="content-desc">
-                            <p>ZSFG hospital interstitial page, a concept project, is a <strong>centralized source of essential information</strong> (housing, financial support, medical specialists), making it <strong>quick and easy for families</strong> with children dealing with terminal illnesses to find the key resources that they need.</p>
-                            <p>The purpose of creating this app is to <strong>help users take control</strong> when it comes to asking for assistance from non-profit organizations.</p>
-                        </div>
-                        <div class="graphics">
-                            <div class="graphic-cell">
-                                <div class="text-top">02</div>
-                                <div class="text-bottom">weeks</div>
-                            </div>
-                            <div class="graphic-cell">
-                                <div class="text-top">01</div>
-                                <div class="text-bottom">iOS app</div>
-                            </div>
-                            <div class="graphic-cell last">
-                                <div class="text-top">03</div>
-                                <div class="text-bottom">members</div>
-                            </div>
+                    <div class="logo-container">
+                        <div class="text-container">
+                            <h1>Zuckerberg San Francisco General Hospital</h1>
+                            <!-- TODO: update link -->
+                            <a class="font-xsmall" href="https://www.figma.com/proto/wjDbN6vCnL3PHEzl3anbX9/Wireframe_website?node-id=334%3A0&scaling=scale-down" target="_blank">View Prototype</a>
                         </div>
                     </div>
+                    <img id="landing-img" src="assets/img/ZSFG_LandingPage.jpg" alt="zsfg-landing">
                 </div>
             </section>
-            <section class="page next-page" id="page-5">
+            <section id="page-2">
                 <div class="content-container">
                     <div class="inner-content">
-                        <div class="content">
-                            <h3>Old design had the functionality, yet lacked the <span>accessibility</span></h3>
-                            <div class="content-desc">
-                                <p>Navicare, as sponsored by Johnson & Johnson, is trying to reflect its branding within the color palette.</p>
-                                <p>Unfortunately, the current color palette shows that Red color has been intense and can cause users unwelcoming feelings. Which might not be accessible to majority of users. </p>
+                        <h2 class="font-large">
+                            <p>Our awesome team &</p>
+                            <p>design brief</p>
+                        </h2>
+                        <div class="inner-wrapper">
+                            <div class="content-desc font-small">
+                                <p>This is a client project for the San Francisco General Hospital (ZSFG) conducted under the supervision of the General Assembly instructing staff.</p>
+                                <p>Our team includes:</p>
+                                <div class="attribution">
+                                    <p class="author">Tram Nguyen</p>
+                                    <p>UX Designer</p>
+                                    <p>Information Architect</p>
+                                </div>
+                                <div class="attribution">
+                                    <p class="author">Serah Almeyda </p>
+                                    <p>UX Designer</p>
+                                    <p>Interaction Designer</p>
+                                </div>
+                                <div class="attribution">
+                                    <p class="author">Atom Edwards</p>
+                                    <p>UX Designer</p>
+                                    <p>UI Designer</p>
+                                </div>
+                                <div>
+                                    <div>
+                                        <span class="font-bold">Company: </span>
+                                        <span>Zuckerberg San Francisco General (ZSFG) Hospital</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Problem to solve: </span>
+                                        <span>New interstitial page</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Format: </span>
+                                        <span>Responsive web, mobile web</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Assignment Method: </span>
+                                        <span>Flow diagram, workshop, meeting with clients</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Design Deliverables: </span>
+                                        <span>Information Architecture map, high-fidelity design for web and mobile web</span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="graphics">
-                                <div id="navi-img"><img src="assets/img/navicare-small.svg" loading="lazy" alt="" loading="lazy"></div>
-                                <div id="divider">X</div>
-                                <div id="johnson"><img src="assets/img/johnson.svg" loading="lazy" alt="" loading="lazy"></div>
-                            </div>
-                            <div class="graphics-circles">
-                                <div id="gray">Light Gray</div>
-                                <div id="red">Red</div>
-                                <div id="pink">Pink</div>
-                                <div id="white">White</div>
-                            </div>
-                        </div>
-                        <img id="phone-img" src="assets/img/phone.svg" alt="" loading="lazy">
-                    </div>
-                </div>
-            </section>
-            <section class="page next-page" id="page-6">
-                <div class="content-container">
-                    <div class="inner-content">
-                        <div class="quote">
-                            <img src="assets/img/quote.svg" alt="" loading="lazy">
-                            The repetition of red is very
-                            <p>intense and harsh to the eyes.</p>
-                            There’s no indication of
-                            <p>which page we’re on.</p>
-                        </div>
-                        <div class="nav-bar">
-                            <img src="assets/img/navbar.svg" alt="" loading="lazy">
-                        </div>
-                        <div class="notes">
-                            <p>Our first design came out and received great attention from the users.</p>
-                            <p>These are some of the feedback we received</p>
-                            <p>on our first testing with the original product.</p>
-                            <p>We then took note and ideated from the DNA of our design.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="page next-page" id="page-7">
-                <div class="content-container">
-                    <img class="background" src="assets/img/half-circle-background.svg" alt="" loading="lazy">
-                    <div class="inner-content">
-                        <div class="text-container">
-                            <div class="header-text">
-                                <p>Calming,</p>
-                                <p class="accent">Gentle,</p>
-                                <p>Accessible</p>
-                                <p>through the new palette</p>
-                            </div>
-                            <div class="notes">
-                                <p>Adding a shade of blue, which is still part of Johnson & Johnson color palette helps ease the intensity of red.</p>
-                                <p>At the same time increase the readability of the whole app used.</p>
-                            </div>
-                        </div>
-                        <div class="graphics-small">
-                            <div class="graphics-circles">
-                                <div id="light-blue">Light Blue</div>
-                                <div id="blue">Blue</div>
-                                <div id="pink-2">Pink</div>
-                                <div id="red-2">Red</div>
-                            </div>
-                        </div>
-                        <div class="graphics-large">
-                            <div class="circle-large">
-                                <p>4.53 : 1</p>
-                                <p>Constrast Ratio</p>
-                            </div>
-                            <div class="circle-large">
-                                <p>Pass</p>
-                                <p>WCAG AA</p>
-                            </div>
-                            <div class="circle-large">
-                                <p>Pass</p>
-                                <p>WCAG AAA</p>
+                                <div class="graphic-cell">
+                                    <div class="text-top">03</div>
+                                    <div class="text-bottom">weeks</div>
+                                </div>
+                                <div class="graphic-cell">
+                                    <div class="text-top">01</div>
+                                    <div class="text-bottom">webpage</div>
+                                </div>
+                                <div class="graphic-cell last">
+                                    <div class="text-top">03</div>
+                                    <div class="text-bottom">members</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="page next-page" id="page-8">
+            <section id="page-3">
                 <div class="content-container">
                     <div class="inner-content">
-                        <h3><span>Same feel, </span><span class="accent">different look</span></h3>
-                        <div class="notes">With the new addition of color palette and adoption of new style, we proudly introduce the new version of Navicare. Our design puts user’s comfort on top of our priority list, and everything has to reflect that.</div>
-                        <div class="mock-container">
-                            <div>
-                                <div class="title">INFO PAGE</div>
-                                <img src="assets/img/mock-detail-1.svg" alt="" loading="lazy">
+                        <h2 class="font-large">The problem to solve for Zuckerberg San Francisco General Hospital</h2>
+                        <div class="content-desc">
+                            <p>San Francisco Health Network is a community of 14 clinics, 2 hospitals and multiple programs that connects San Franciscans with the proper healthcare. Zuckerberg San Francisco General Hosipital (ZSFG) is one of the 2 largest branches under this network. However, users of its website and its patients through testing have initally failed to realize the relation between these 2 names.</p>
+                            <p>Furthermore, results from testing shows a confusion in navigating the site, resulting in inefficiencies when looking for the right information, especially under time constraints such as emergencies.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-4">
+                <div class="content-container">
+                    <div class="inner-content">
+                        <h2>Why is it necessary to establish an intersitial page for ZSFG?</h2>
+                        <div class="content-desc">
+                            <p>The outcome of the mentioned test has been used as the foundational research, leading to a series of key points before starting on the design process.</p>
+                            <ul>
+                                <li>&#x2022; Build understanding that ZSFG is a hospital within the San Francisco Health Network</li>
+                                <li>&#x2022; Drive traffic to ZSFG for emergency needs and Family Birth center, 2 main services under this hospital</li>
+                                <li>&#x2022; Clarify the difference between emergency vs. urgent care needs</li>
+                                <li>&#x2022; Assist in directions and get people to where they need to go</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-5">
+                <div class="content-container">
+                    <div class="inner-content">
+                        <h2>We took a closer look at the user’s journey</h2>
+                        <div class="content">
+                            <div class="left">
+                                <p>We imagined an ideal situation that will happen once we could solve the user's problem. There are a few touchpoints with the website that we can leverage to improve the site, such as the searching for treatments, location and maps of the facility.</p>
                             </div>
-                            <div>
-                                <div class="title">SEARCH RESULTS</div>
-                                <img src="assets/img/mock-detail-2.svg" alt="" loading="lazy">
-                            </div>
-                            <div>
-                                    <div class="title">MAKING A LIST</div>
-                                <img src="assets/img/mock-detail-3.svg" alt="" loading="lazy">
+                            <div class="right">
+                                <img src="assets/img/ux-map.svg" alt="" loading="lazy">
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-6">
+                <div class="content-container">
+                    <div class="inner-content">
+                        <h2>Giving ‘Navigation’ the attention it deserves</h2>
+                        <div class="content-desc">
+                            <p>From testing, users have complained that the complicated navigation on the ZSFG site did not do well with helping them find information, instead giving them more confusion and unanswered questions. Therefore, we pulled up all the labels at the current site, laid them out on the same page and took a close look. We then noticed some pain points:</p>
+                            <ul>
+                                <li>&#x2022; There were many repetitive labels</li>
+                                <li>&#x2022; Different labels direct to the same place</li>
+                            </ul>
+                            <p>As for the navigation flow, the ZSFG website shows significant issues in organization:</p>
+                            <ul>
+                                <li>&#x2022; Little emphasis on the main treatments of the hospital</li>
+                                <li>&#x2022; Important features are hard to find</li>
+                                <li>&#x2022; Information for the same categories are scattered throughout different pages</li>
+                            </ul>
+                        </div>
+                        <div class="img-container">
+                            <!-- TODO: get a less pixelated jpg/png of this image -->
+                            <img src="assets/img/flow-chart.svg" alt="" loading="lazy">
+                            <p>Laying out the site map of the current ZSFG site was horrific</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-7">
+                <div class="content-container">
+                    <div class="inner-content">
+                        <h2>Getting deep down with the Information Architecture</h2>
+                        <div class="content-desc">
+                            <p>We decided to start the design process by establishing a rough IA sketch, which would play as a backbone for the interstitial site.</p>
+                            <p>Our idea was to have the IA effectively reflect the layout of the buildings within the <strong>physical ZSFG campus</strong>, which we had a chance to visit in person. The IA map also implies the <strong>hierarchy of treatment services</strong>. For easy access, we also included the <strong>ZSFG campus map</strong> on the main nav bar, which previously was deeply hidden on some obscure page.</p>
+                            <p>After the mapping, <strong>card sorting</strong> test was conducted to validate the ease of use of this IA. The result came out to be successful. 9/10 of our testers agreed that the flow is user intuitive.</p>
+                        </div>
+                        <div class="img-container">
+                            <div>
+                                <!-- TODO: get jpg/png for these images -->
+                                <img src="assets/img/zsfg-tour-1.svg" alt="" loading="lazy">
+                                <p>Had a fun day exploring ZSFG campus</p>
+                            </div>
+                            <div>
+                                <img src="assets/img/zsfg-tour-2.svg" alt="" loading="lazy">
+                                <p>Came back with lots of ideas for the design</p>
+                            </div>
+                            <div>
+                                <img src="assets/img/zsfg-tour-3.svg" alt="" loading="lazy">
+                                <p>A rough sketch for the map</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="page-8">
+                <div class="content-container">
+                    <div class="inner-content">
+
                     </div>
                 </div>
             </section>
