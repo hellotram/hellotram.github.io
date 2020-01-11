@@ -57,6 +57,7 @@ li {
     padding: 5px 0 0 10px;
 }
 
+/* TODO: update navigation transition animation */
 #work-subnav {
     padding-left: 15px;
     transition: all .5s ease;
