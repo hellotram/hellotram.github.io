@@ -26,7 +26,7 @@ section {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 80px;
+    padding: 80px 80px 80px 180px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -35,6 +35,8 @@ section {
 
 .inner-content {
     width: 100%;
+    max-width: 1024px;
+    overflow: auto;
 }
 
 .border {
@@ -71,12 +73,6 @@ section {
 
 .bottom-border {
     bottom: 0;
-}
-
-.header-text {
-    font-weight: bold;
-    font-size: 44px;
-    color: #FA8383;
 }
 
 .primary-color {
@@ -154,8 +150,7 @@ section {
 
 .logo-container {
     font-family: 'Raleway';
-    padding-left: 100px;
-    z-index: 3;
+    z-index: 13;
     position: relative;
 }
 
@@ -210,19 +205,22 @@ section {
     padding-top: 100px;
 }
 
+#page-2 .content-container {
+    flex-direction: column;
+}
+
 #page-2 h2 {
-    position: relative;
-    left: 10%;
-    bottom: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#page-2 .inner-wrapper {
+    float: right;
 }
 
 #page-2 .content-desc {
-    width: 65%;
-    position: relative;
     margin-bottom: 30px;
-    left: 30%;
     text-align: left;
-    min-width: 515px;
 }
 
 #page-2 p {
@@ -241,10 +239,6 @@ section {
 }
 
 #page-2 .graphics {
-    position: relative;
-    display: inline-block;
-    left: 30%;
-    width: 70%;
     font-family: 'Raleway';
 }
 
@@ -273,59 +267,19 @@ section {
     font-size: 20px;
 }
 
-#page-2 .background-1 {
-    width: 800px;
-    position: absolute;
-    top: -170px;
-    right: -30px;
-    opacity: 0.08;
-}
-
-#page-2 .background-2 {
-    width: 800px;
-    position: absolute;
-    top: 500px;
-    right: -150px;
-    opacity: 0.08;
-}
-
 /* PAGE 3 */
-
-@media (min-width: 1255px) {
-    #page-3 h2 {
-        width: 75%;
-    }
-
-    #page-3 .content-desc {
-        width: 65%;
-    }
+#page-3 h2 {
+    width: 100%;
+    margin-bottom: 30px;
 }
 
-@media (min-width: 1085px) and (max-width: 1254px) {
-    #page-3 h2 {
-        width: 90%;
-    }
-
-    #page-3 .content-desc {
-        width: 85%;
-    }
-}
-
-@media (min-width: 600px) and (max-width: 1084px) {
-    #page-3 h2 {
-        width: 100%;
-    }
-
-    #page-3 .content-desc {
-        width: 100%;
-    }
+#page-3 h2 > p {
+    margin: 0;
 }
 
 #page-3 .content-desc {
-    position: relative;
-    left: 30%;
-    margin-top: 20px;
     text-align: left;
+    float: right;
 }
 
 #page-3 .quote-container {
@@ -352,14 +306,11 @@ section {
     top: -30px;
 }
 
-#page-3 h2 {
-    position: relative;
-    left: 10%;
-    display: inline-block;
-    color: #FA8383;
-}
-
 /* PAGE-4 */
+
+#page-4 h3 > p {
+    margin: 0;
+}
 
 #page-4 .grey {
     color: #807D79;
@@ -371,7 +322,6 @@ section {
 
 #page-4 .content {
     display: inline-block;
-    padding-left: 10%;
     width: 80%;
 }
 
@@ -384,6 +334,7 @@ section {
 }
 
 #page-4 .img-container {
+    display: inline-block;
     margin-top: 30px;
 }
 
@@ -397,7 +348,7 @@ section {
     width: 100%;
     display: flex;
     align-items: flex-end;
-    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
 }
 
 #page-5 ul {
@@ -408,11 +359,16 @@ section {
 
 #page-5 .left {
     display: inline-block;
+    flex: 1 1 300px;
+    margin-top: 40px;
+    align-self: baseline;
 }
 
 #page-5 .right {
     display: inline-block;
-    padding-left: 50px;
+    box-sizing: border-box;
+    text-align: right;
+    flex: 1 1 650px;
 }
 
 #page-5 .right h2 {
@@ -421,7 +377,8 @@ section {
 }
 
 #page-5 .right img {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
 }
 
 #page-5 .graphic {
@@ -439,21 +396,28 @@ section {
 
 #page-6 .inner-content {
     width: 100%;
+    max-width: 1080px;
     display: flex;
     align-items: flex-end;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
 }
 
 #page-6 .left {
-    display: inline-block;
+    width: 100%;
+    max-width: 480px;
     text-align: center;
     font-style: italic;
+    margin-top: 40px;
+    align-self: baseline;
+}
+
+#page-6 .left img {
+    width: 100%;
 }
 
 #page-6 .right {
-    display: inline-block;
-    padding-left: 50px;
-    width: 620px;
+    width: 530px;
 }
 
 #page-6 .right h2 {
@@ -465,7 +429,7 @@ section {
 }
 
 #page-6 .text-container {
-    width: 75%;
+    width: 80%;
 }
 
 #page-6 .text-container p:first-child {
@@ -479,6 +443,8 @@ section {
 }
 
 #page-6 .graphics {
+    width: 100%;
+    max-width: 1080px;
     margin-top: 30px;
     text-align: center;
     font-style: italic;
@@ -488,16 +454,22 @@ section {
     margin: 0;
 }
 
+#page-6 .graphics img {
+    width: 100%;
+}
+
 /* PAGE 7 */
 
 #page-7 .content-container {
-    padding-top: 120px;
+    padding-top: 40px;
 }
 
 #page-7 .inner-content {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    overflow: visible;
+    flex-wrap: wrap;
 }
 
 #page-7 .concern {
@@ -523,6 +495,7 @@ section {
     display: inline-block;
     width: 370px;
     position: relative;
+    margin-top: 80px;
 }
 
 #page-7 .right img {
@@ -542,10 +515,16 @@ section {
 
 /* PAGE 8 */
 
+#page-8 .content-container {
+    padding-top: 0;
+}
+
 #page-8 .inner-content {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    overflow: visible;
+    flex-wrap: wrap-reverse;
 }
 
 #page-8 .concern {
@@ -565,6 +544,7 @@ section {
     display: inline-block;
     width: 370px;
     position: relative;
+    margin-top: 80px;
 }
 
 #page-8 .left img {
@@ -589,10 +569,16 @@ section {
 
 /* PAGE 9 */
 
+#page-9 .content-container {
+    padding-top: 0;
+}
+
 #page-9 .inner-content {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    overflow: visible;
+    flex-wrap: wrap;
 }
 
 #page-9 .concern {
@@ -619,6 +605,7 @@ section {
     width: 370px;
     position: relative;
     text-align: right;
+    margin-top: 80px;
 }
 
 #page-9 .right img {
@@ -638,19 +625,25 @@ section {
 
 /* PAGE-10 */
 
+#page-10 .content-container {
+    padding-top: 0;
+}
+
 #page-10 .inner-content {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #page-10 .left {
     display: inline-block;
     width: 600px;
+    margin-top: 80px;
 }
 
 #page-10 .img-container {
-    float: right;
+    margin-top: 80px;
 }
 
 #page-10 .img-container p {
@@ -675,6 +668,10 @@ section {
     width: 45%;
 }
 
+#navi-img img {
+    width: 100%;
+}
+
 #divider {
     font-family: sans-serif;
     color: #929292;
@@ -688,6 +685,10 @@ section {
     width: 45%;
     vertical-align: middle;
     text-align: right;
+}
+
+#johnson img {
+    width: 100%;
 }
 
 #page-10 .graphics-circles div {
@@ -735,8 +736,9 @@ section {
 #page-11 .inner-content {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     z-index: 2;
+    flex-wrap: wrap;
 }
 
 #page-11 .background {
@@ -819,19 +821,31 @@ section {
     justify-content: space-evenly;
 }
 
-#page-11 .graphics-large div {
+#page-11 .circle-container {
+    width: 25%;
+    max-width: 250px;
     display: inline-block;
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
     vertical-align: middle;
     text-align: center;
     font-size: 30px;
     color: #0094B5;
     background-color: white;
-    padding-top: 84px;
     box-sizing: border-box;
     margin-top: 30px;
+}
+
+#page-11 .circle-container > div {
+    height: 0;
+    padding-top: 100%;
+    position: relative;
+}
+
+#page-11 .circle-large > div {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 34%;
 }
 
 #page-11 .circle-large p {
