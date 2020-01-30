@@ -161,13 +161,17 @@ section {
 #page-1 .text-container {
     position: relative;
     padding-left: 8px;
-    font-size: 25px;
     margin-top: 20px;
-    font-style: italic;
 }
 
 #page-1 .text-container h1 {
+    font-size: 60px;
+    color: #005695;
+}
+
+#page-1 .text-container p {
     font-size: 25px;
+    font-style: italic;
     color: #807D79;
 }
 
