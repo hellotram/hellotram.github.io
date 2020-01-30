@@ -385,6 +385,10 @@ img {
     width: 100%;
 }
 
+#page-6 .img-container video {
+    width: 100%;
+}
+
 #page-6 .img-container p {
     text-align: center;
     font-style: italic;
