@@ -229,3 +229,13 @@ p {
     background-color: #8EBDBC;
     margin-bottom: 30px;
 }
+
+@media (max-width: 600px) {
+    .contact-links-container {
+        display: none !important;
+    }
+
+    .border {
+        display: none !important;
+    }
+}

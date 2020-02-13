@@ -85,3 +85,13 @@ input {
     text-decoration: none;
     color: #54A5A3;
 }
+
+@media (max-width: 600px) {
+    main {
+        border: none !important;
+    }
+
+    .contact-links-container {
+        display: none !important;
+    }
+}

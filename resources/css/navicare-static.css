@@ -45,6 +45,12 @@ section {
     z-index: 10;
 }
 
+@media (max-width: 600px) {
+    .border {
+        display: none;
+    }
+}
+
 .right-border, .left-border {
     width: 30px;
     height: 100vh;
@@ -201,6 +207,12 @@ section {
     right: -700px;
     top: 0;
     z-index: 12;
+}
+
+@media (max-width: 1000px) {
+    #landing-img {
+        display: none;
+    }
 }
 
 /* PAGE-2 */
