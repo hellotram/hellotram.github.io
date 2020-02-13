@@ -209,3 +209,13 @@ a {
 .zsfg-header {
     width: 530px;
 }
+
+@media (max-width: 600px) {
+    .contact-links-container {
+        display: none !important;
+    }
+
+    .border {
+        display: none !important;
+    }
+}
