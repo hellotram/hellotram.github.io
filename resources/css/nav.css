@@ -79,3 +79,93 @@ li {
     height: 48px;
     right: 0;
 }
+
+header {
+    display: none;
+}
+
+#close-icon {
+    display: none;
+    width: 18px;
+}
+
+@media (max-width: 600px) {
+    header {
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        position: fixed;
+        width: 100%;
+        z-index: 20;
+        background-color: white;
+        border-bottom-style: solid;
+        border-bottom-color: #404040;
+        border-bottom-width: 1px;
+    }
+
+    nav {
+        position: absolute;
+        left: 0;
+        z-index: 20;
+        padding: 20px;
+        background-color: white;
+        display: inline-block;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+
+    #mobile-logo {
+        height: 100%;
+    }
+
+    #mobile-logo img {
+        width: auto;
+        height: 100%;
+    }
+
+    #hamburger {
+        height: 20px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #nav-list-container a {
+        text-decoration: none;
+        color: #404040;
+        font-weight: 700;
+        display: inline-block;
+    }
+
+    #nav-list-container li:not(:last-child) a {
+        padding-bottom: 25px;
+    }
+
+    #nav-list-container .nav-link:hover {
+        color: #F49595;
+    }
+
+    #nav-list-container .selected {
+        color: #F49595;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .shown {
+        display: block;
+    }
+
+    .nav-container {
+        display: none;
+    }
+
+    .main-container {
+        position: relative;
+        top: 61px;
+    }
+}
