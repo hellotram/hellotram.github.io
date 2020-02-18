@@ -143,8 +143,9 @@ header {
         display: inline-block;
     }
 
-    #nav-list-container li:not(:last-child) a {
-        padding-bottom: 25px;
+    #nav-list-container li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 
     #nav-list-container .nav-link:hover {
@@ -153,6 +154,23 @@ header {
 
     #nav-list-container .selected {
         color: #F49595;
+    }
+
+    #work-nav-mob {
+        cursor: pointer;
+    }
+
+    #work-nav-mob:hover {
+        color: #F49595;
+    }
+
+    #work-subnav-mob {
+        position: relative;
+        z-index: 0;
+    }
+
+    .show {
+        height: 86px;
     }
 
     .hidden {
