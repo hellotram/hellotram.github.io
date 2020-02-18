@@ -56,6 +56,7 @@ a {
 .main-container {
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .home {
@@ -210,12 +211,154 @@ a {
     width: 530px;
 }
 
+.greeting-border {
+    display: none;
+}
+
+@media (max-width: 867px) {
+    .home {
+        padding-top: calc((100vh - 720px) / 2);
+    }
+}
+
 @media (max-width: 600px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 15px;
+    }
+
+    .main-container {
+        position: relative;
+        top: 62px;
+    }
+
     .contact-links-container {
         display: none !important;
     }
 
     .border {
         display: none !important;
+    }
+
+    .home {
+        padding: 0;
+        height: unset;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .greeting {
+        font-size: 18px;
+    }
+
+    .greeting span {
+        font-size: 18px;
+    }
+
+    .bar {
+        height: 8px;
+    }
+
+    .greeting-border {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #FDDFE1;
+        margin-bottom: 20px;
+    }
+
+    .arrow-container {
+        position: relative;
+        bottom: 0;
+    }
+
+    .arrow-container img {
+        width: 30px;
+    }
+
+    .zsfg-container {
+        height: unset;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .zsfg-bg {
+        padding: 20px;
+        width: 100%;
+        height: auto;
+        margin: 80px 0 20px 0;
+    }
+
+    .zsfg-bg img {
+        width: 350px;
+        bottom: -80px;
+        right: unset;
+        left: 50%;
+    }
+
+    .zsfg-header {
+        font-size: 18px;
+        width: auto;
+        margin-top: 0;
+    }
+
+    .zsfg-text {
+        width: 50%;
+    }
+
+    .zsfg-text p {
+        font-size: 15px;
+    }
+
+
+    .navicare-container {
+        height: unset;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .navicare-bg {
+        padding: 40px 20px;
+        width: 100%;
+        height: auto;
+        margin: 160px 0 100px 0;
+    }
+
+    .navicare-bg img {
+        height: 300px;
+        bottom: -80px;
+        right: 10px;
+    }
+
+    .navicare-text {
+        width: 50%;
+    }
+
+    .navicare-text h2 {
+        font-size: 18px;
+        width: auto;
+        margin-top: 0;
+    }
+
+    .navicare-text p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 526px) {
+    .navicare-bg img {
+        bottom: -60px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .navicare-bg img {
+        right: 0;
     }
 }

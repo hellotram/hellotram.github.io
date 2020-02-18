@@ -1,8 +1,12 @@
-document.getElementById('work-nav').onclick = function () {
+document.getElementById('work-nav').onclick = function() {
     document.getElementById('work-subnav').classList.toggle('show');
 }
 
-document.getElementById('hamburger').onclick = function () {
+document.getElementById('work-nav-mob').onclick = function() {
+    document.getElementById('work-subnav-mob').classList.toggle('show');
+}
+
+document.getElementById('hamburger').onclick = function() {
     const navList = document.getElementById('nav-list-container');
     const nav = document.getElementById('mobile-nav');
     const hamburgerIcon = document.getElementById('hamburger-icon');
