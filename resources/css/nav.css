@@ -184,9 +184,4 @@ header {
     .nav-container {
         display: none;
     }
-
-    .main-container {
-        position: relative;
-        top: 61px;
-    }
 }
