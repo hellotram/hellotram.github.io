@@ -254,6 +254,7 @@ a {
 
     .greeting {
         font-size: 18px;
+        font-weight: 200;
     }
 
     .greeting span {
@@ -261,7 +262,8 @@ a {
     }
 
     .bar {
-        height: 8px;
+        width: 75px;
+        height: 6px;
     }
 
     .greeting-border {
