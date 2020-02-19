@@ -296,6 +296,7 @@ p {
 
     .intro-text-1, .intro-text-2 {
         font-size: 18px;
+        font-weight: 200;
         margin: 4px 0;
     }
 

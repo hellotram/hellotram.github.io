@@ -184,4 +184,20 @@ header {
     .nav-container {
         display: none;
     }
+
+    .contact-links-container-nav {
+        display: block;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .contact-links-container-nav > ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-links-container-nav > ul li{
+        display: inline-block;
+        padding: 0 5px;
+    }
 }
