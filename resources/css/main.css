@@ -215,6 +215,27 @@ a {
     display: none;
 }
 
+.contact-links-container-mob {
+    display: none;
+}
+
+.credits {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.credits p {
+    font-size: 12px;
+    font-family: 'Raleway';
+    font-weight: 300;
+    color: #404040;
+}
+
+.credits a {
+    color: #404040;
+    text-decoration: none;
+}
+
 @media (max-width: 867px) {
     .home {
         padding-top: calc((100vh - 720px) / 2);
@@ -349,6 +370,25 @@ a {
 
     .navicare-text p {
         font-size: 15px;
+    }
+
+    .credits {
+        margin-top: 120px;
+        margin-bottom: 0;
+    }
+
+    .contact-links-container-mob {
+        display: block;
+        text-align: center;
+    }
+
+    .contact-links-container-mob > ul {
+        padding: 0;
+    }
+
+    .contact-links-container-mob > ul li{
+        display: inline-block;
+        padding: 0 5px;
     }
 }
 
