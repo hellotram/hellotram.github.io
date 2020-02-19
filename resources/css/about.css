@@ -274,6 +274,7 @@ p {
         position: relative;
         top: 62px;
         width: 100%;
+        overflow: hidden;
     }
 
     .intro {
