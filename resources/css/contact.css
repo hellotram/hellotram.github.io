@@ -94,4 +94,26 @@ input {
     .contact-links-container {
         display: none !important;
     }
+
+    .main-container {
+        position: relative;
+        top: 61px;
+        width: 100%;
+        padding: 0 40px;
+        justify-content: flex-start;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 15px;
+    }
+
+    .contact-container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 60px 0 0 0;
+    }
 }
