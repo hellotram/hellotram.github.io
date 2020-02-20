@@ -789,6 +789,10 @@ img {
     #page-9 .img-container > .img-desc {
         display: none;
     }
+
+    #page-11 .content-container {
+        padding-bottom: 120px;
+    }
 }
 
 @media (max-width: 500px) {
