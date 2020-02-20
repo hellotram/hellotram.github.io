@@ -132,7 +132,9 @@ a {
     height: 586px;
     background-color: #CEE7E7;
     margin: 50px auto;
-    padding: 260px 0 0 80px;
+    padding: 0 0 0 80px;
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
 }
 
@@ -142,12 +144,20 @@ a {
     bottom: -50px;
 }
 
+.navicare-text {
+    width: 55%;
+}
+
+.navicare-text a {
+    display: inline-block;
+}
+
 .navicare-text h2 {
     display: inline-block;
     font-family: 'Raleway';
     font-size: 40px;
     color: #04807D;
-    margin: 0 0 10px 0;
+    margin-top: 0;
 }
 
 .navicare-text h2:hover {
@@ -170,17 +180,27 @@ a {
 
 .zsfg-bg {
     width: 80%;
-    height: 586px;
+    height: 590px;
     background-color: #FDDFE1;
     margin: 50px auto;
-    padding: 155px 0 0 80px;
+    padding-left: 80px;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
 
 .zsfg-bg img {
     position: absolute;
-    right: -30px;
+    left: 60%;
     bottom: 140px;
+}
+
+.zsfg-text {
+    width: 55%;
+}
+
+.zsfg-text a {
+    display: inline-block;
 }
 
 .zsfg-text p {
@@ -194,6 +214,8 @@ a {
     font-family: 'Raleway';
     font-size: 40px;
     color: #04807D;
+    width: 100%;
+    margin-top: 0;
 }
 
 .zsfg-header:hover {
@@ -205,10 +227,6 @@ a {
     font-size: inherit;
     color: inherit;
     margin: 0;
-}
-
-.zsfg-header {
-    width: 530px;
 }
 
 .greeting-border {
@@ -234,6 +252,17 @@ a {
 .credits a {
     color: #404040;
     text-decoration: none;
+}
+
+@media (max-width: 1080px) {
+    .navicare-bg img {
+        right: unset;
+        left: 60%;
+    }
+
+    .navicare-text {
+        width: 50%;
+    }
 }
 
 @media (max-width: 867px) {
@@ -311,7 +340,7 @@ a {
     }
 
     .zsfg-bg {
-        padding: 20px;
+        padding: 30px 20px;
         width: 100%;
         height: auto;
         margin: 80px 0 20px 0;
@@ -335,9 +364,8 @@ a {
     }
 
     .zsfg-text p {
-        font-size: 15px;
+        font-size: 17px;
     }
-
 
     .navicare-container {
         height: unset;
@@ -356,6 +384,7 @@ a {
         height: 300px;
         bottom: -80px;
         right: 10px;
+        left: unset;
     }
 
     .navicare-text {
@@ -370,6 +399,10 @@ a {
 
     .navicare-text p {
         font-size: 15px;
+    }
+
+    .navicare-text h2 {
+        font-size: 17px;
     }
 
     .credits {
